@@ -1,0 +1,20 @@
+PODS:
+  - Alamofire (4.8.1)
+  - ChirpSDK (3.4.3)
+
+DEPENDENCIES:
+  - Alamofire
+  - ChirpSDK
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - ChirpSDK
+
+SPEC CHECKSUMS:
+  Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
+  ChirpSDK: 6f7ca641463e090ec3df8a0c7189b7ce412cb739
+
+PODFILE CHECKSUM: f8a476b344303bb13245b2d8a1aa71150141a61a
+
+COCOAPODS: 1.6.0

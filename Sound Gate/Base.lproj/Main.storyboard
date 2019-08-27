@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="njb-yZ-oKu">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -191,7 +191,7 @@
         <!--Saldo-->
         <scene sceneID="nIh-B4-72R">
             <objects>
-                <viewController id="PdL-kD-jWI" sceneMemberID="viewController">
+                <viewController id="PdL-kD-jWI" customClass="WalletViewController" customModule="Sound_Gate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VpU-cG-9K0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -216,6 +216,9 @@
                                 <state key="normal" title="Bloquear Saldo">
                                     <color key="titleColor" red="0.76470588240000004" green="0.94117647059999998" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="ouvirAudio:" destination="PdL-kD-jWI" eventType="touchUpInside" id="vzi-fq-CcY"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="iTunesArtwork" translatesAutoresizingMaskIntoConstraints="NO" id="vmN-AM-sTL">
                                 <rect key="frame" x="-100" y="548" width="335" height="299"/>
@@ -243,6 +246,9 @@
                         <viewLayoutGuide key="safeArea" id="kMd-Os-lSk"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Saldo" image="HomeIcon" id="mJA-om-oSp"/>
+                    <connections>
+                        <outlet property="label" destination="Fe3-Qi-MI5" id="XzQ-ip-pEn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CHt-2B-ri4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

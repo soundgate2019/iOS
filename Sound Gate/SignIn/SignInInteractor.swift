@@ -6,4 +6,6 @@
 //  Copyright © 2019 Matheus Martins. All rights reserved.
 //
 
-import Foundation
+class SignInInteractor {
+    
+}

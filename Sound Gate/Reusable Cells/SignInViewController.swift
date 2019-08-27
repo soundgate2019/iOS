@@ -6,4 +6,8 @@
 //  Copyright © 2019 Matheus Martins. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class SignInViewController: UIViewController {
+    
+}
