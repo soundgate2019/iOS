@@ -8,75 +8,62 @@
 
 import UIKit
 
-protocol LoginDisplayLogic {
-    func displayLogin(viewObject: FetchLoginInfos.VO)
-}
 class LoginViewController: UIViewController {
-
+    
     @IBOutlet weak var loginLabel: UILabel!
-    @IBOutlet weak var loginTableView: UITableView!
+    @IBOutlet weak var userTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var loginButton: UIButton!
     
-    var interactor: LoginBusinessLogic?
-    var cells: [FetchLoginInfos.Response.CellType]?
-    
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        setup()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        setup()
-    }
-    private func setup() {
-        LoginConfigurator.shared.configure(self)
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loginTableView.delegate = self
-        loginTableView.dataSource = self
-        loginTableView.register(UINib(nibName: "TextFieldCell", bundle: nil), forCellReuseIdentifier: "textFieldCell")
-        loginTableView.register(UINib(nibName: "ButtonCell", bundle: nil), forCellReuseIdentifier: "btCell")
-        interactor?.handleLogin(request: FetchLoginInfos.Request())
-    }
-
-}
-
-extension LoginViewController: UITableViewDelegate {
-    
-}
-
-extension LoginViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cells!.count
+        loginButton.layer.cornerRadius = 8
+        passwordTextField.isSecureTextEntry = true
+        userTextField.autocorrectionType = .no
+        self.addDoneButtonOnKeyboard()
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch cells![indexPath.row] {
-            case .textField(let textField):
-                let item = tableView.dequeueReusableCell(withIdentifier: "textFieldCell", for: indexPath) as! TextFieldTableViewCell
-                item.setTextField(placeHolderText: textField)
-                if textField == "Senha" {
-                    item.textField.isSecureTextEntry = true
-                }
-                return item
-            case .buttonAction(let actionText):
-                let item = tableView.dequeueReusableCell(withIdentifier: "btCell", for: indexPath) as! ButtonTableViewCell
-                item.setOption(optionText: actionText)
-                return item
-            case .buttonFinalization(let finalizationText):
-                let item = tableView.dequeueReusableCell(withIdentifier: "btCell", for: indexPath) as! ButtonTableViewCell
-                item.setFinalization(buttonText: finalizationText)
-                return item
-            }
-        return UITableViewCell()
+    func addDoneButtonOnKeyboard() {
+        let doneToolbar: UIToolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 320, height: 50))
+        doneToolbar.barStyle = .default
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        let done: UIBarButtonItem  = UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.done, target: self, action: #selector(self.doneButtonAction))
+        
+        var items = [UIBarButtonItem]()
+        items.append(flexSpace)
+        items.append(done)
+        
+        doneToolbar.items = items
+        doneToolbar.sizeToFit()
+        
+        self.userTextField.inputAccessoryView = doneToolbar
+        self.passwordTextField.inputAccessoryView = doneToolbar
     }
-}
-
-extension LoginViewController: LoginDisplayLogic {
-    func displayLogin(viewObject: FetchLoginInfos.VO) {
-        loginLabel.text = viewObject.labelText
-        cells = viewObject.cellType
+    
+    @objc func doneButtonAction() {
+        self.userTextField.resignFirstResponder()
+        self.passwordTextField.resignFirstResponder()
+    }
+    
+    @IBAction func LogIn(_ sender: Any) {
+        if userTextField.text != "Scizor" && passwordTextField.text != "abcd" {
+            loginLabel.text = "Usuário ou senha incorretos"
+            loginLabel.textColor = .red
+        } else {
+            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let newViewController = storyBoard.instantiateViewController(withIdentifier: "Home") as! UITabBarController
+            self.present(newViewController, animated: true, completion: nil)
+        }
+        
+//        if let user = userTextField.text, let password = passwordTextField.text {
+//            LoginService.shared.login(user: user, password: password)
+//        }
+    }
+    
+    @IBAction func routeToRegister(_ sender: Any) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "SignInViewController") as! SignInViewController
+        self.present(newViewController, animated: true, completion: nil)
     }
 }

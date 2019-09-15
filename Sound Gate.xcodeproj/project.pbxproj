@@ -9,40 +9,25 @@
 /* Begin PBXBuildFile section */
 		8523FDCACEE3D7769A8945C7 /* Pods_Sound_Gate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F36D183AEE9E8CFB80E2BD06 /* Pods_Sound_Gate.framework */; };
 		D1B558072313086E00593EED /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B558062313086E00593EED /* SignInViewController.swift */; };
-		D1B55809231308BA00593EED /* SignInInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B55808231308BA00593EED /* SignInInteractor.swift */; };
-		D1B5580B231308E700593EED /* SignInPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B5580A231308E700593EED /* SignInPresenter.swift */; };
-		D1B5580D231308F900593EED /* SignInWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B5580C231308F900593EED /* SignInWorker.swift */; };
-		D1B5580F2313092700593EED /* SignInRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B5580E2313092700593EED /* SignInRouter.swift */; };
-		D1B558112313093D00593EED /* SignInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B558102313093D00593EED /* SignInModel.swift */; };
-		D1B558132313095A00593EED /* SignInConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B558122313095A00593EED /* SignInConfigurator.swift */; };
 		D1BF347222825C99004CA111 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BF347122825C99004CA111 /* AppDelegate.swift */; };
 		D1BF347422825C99004CA111 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BF347322825C99004CA111 /* LoginViewController.swift */; };
 		D1BF347722825C99004CA111 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1BF347522825C99004CA111 /* Main.storyboard */; };
 		D1BF347922825C9B004CA111 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1BF347822825C9B004CA111 /* Assets.xcassets */; };
 		D1BF347C22825C9B004CA111 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1BF347A22825C9B004CA111 /* LaunchScreen.storyboard */; };
 		D1BF381A2313472F001FF2D3 /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BF38192313472F001FF2D3 /* WalletViewController.swift */; };
-		D1D891342300896E0079CF18 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D891332300896E0079CF18 /* LoginRouter.swift */; };
-		D1D89136230089820079CF18 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D89135230089820079CF18 /* LoginInteractor.swift */; };
-		D1D89138230089A90079CF18 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D89137230089A90079CF18 /* LoginPresenter.swift */; };
-		D1D8913A230089F70079CF18 /* LoginConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D89139230089F70079CF18 /* LoginConfigurator.swift */; };
-		D1D8913C23008A0B0079CF18 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D8913B23008A0B0079CF18 /* LoginModel.swift */; };
-		D1D8913E23008A6D0079CF18 /* LoginWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D8913D23008A6D0079CF18 /* LoginWorker.swift */; };
-		D1D8914223008BA60079CF18 /* TextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1D8914123008BA60079CF18 /* TextFieldCell.xib */; };
-		D1D8914523008C320079CF18 /* TextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D8914423008C320079CF18 /* TextFieldTableViewCell.swift */; };
-		D1D8914823008DE50079CF18 /* ButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1D8914723008DE50079CF18 /* ButtonCell.xib */; };
-		D1D8914A23008E670079CF18 /* ButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D8914923008E670079CF18 /* ButtonTableViewCell.swift */; };
+		D1CF8067232D558300CC3190 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CF8066232D558300CC3190 /* LoginService.swift */; };
+		D1CF806A232D58FA00CC3190 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CF8069232D58FA00CC3190 /* LoginModel.swift */; };
+		D1EB6AB6232DAC1E00CAE5AB /* FeedWalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EB6AB5232DAC1E00CAE5AB /* FeedWalletViewController.swift */; };
+		D1EB6AB9232DAE7700CAE5AB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EB6AB8232DAE7700CAE5AB /* ProfileViewController.swift */; };
+		D1EB6ABC232DB08B00CAE5AB /* HowToUseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EB6ABB232DB08B00CAE5AB /* HowToUseViewController.swift */; };
+		D1EB6ABF232DB0EB00CAE5AB /* WhereToUseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EB6ABE232DB0EB00CAE5AB /* WhereToUseViewController.swift */; };
+		D1EB6AC2232DB1D900CAE5AB /* PurchaseHistoricViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EB6AC1232DB1D900CAE5AB /* PurchaseHistoricViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		07003D35169139702B2C5754 /* Pods-Sound Gate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sound Gate.release.xcconfig"; path = "Target Support Files/Pods-Sound Gate/Pods-Sound Gate.release.xcconfig"; sourceTree = "<group>"; };
 		582A1A6B58A74678C5FD0BD5 /* Pods-Sound Gate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sound Gate.debug.xcconfig"; path = "Target Support Files/Pods-Sound Gate/Pods-Sound Gate.debug.xcconfig"; sourceTree = "<group>"; };
 		D1B558062313086E00593EED /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SignInViewController.swift; path = "Sound Gate/Reusable Cells/SignInViewController.swift"; sourceTree = SOURCE_ROOT; };
-		D1B55808231308BA00593EED /* SignInInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInInteractor.swift; sourceTree = "<group>"; };
-		D1B5580A231308E700593EED /* SignInPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPresenter.swift; sourceTree = "<group>"; };
-		D1B5580C231308F900593EED /* SignInWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWorker.swift; sourceTree = "<group>"; };
-		D1B5580E2313092700593EED /* SignInRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRouter.swift; sourceTree = "<group>"; };
-		D1B558102313093D00593EED /* SignInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInModel.swift; sourceTree = "<group>"; };
-		D1B558122313095A00593EED /* SignInConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInConfigurator.swift; sourceTree = "<group>"; };
 		D1BF346E22825C99004CA111 /* Sound Gate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sound Gate.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1BF347122825C99004CA111 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1BF347322825C99004CA111 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -51,16 +36,13 @@
 		D1BF347B22825C9B004CA111 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D1BF347D22825C9B004CA111 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D1BF38192313472F001FF2D3 /* WalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
-		D1D891332300896E0079CF18 /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
-		D1D89135230089820079CF18 /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
-		D1D89137230089A90079CF18 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
-		D1D89139230089F70079CF18 /* LoginConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginConfigurator.swift; sourceTree = "<group>"; };
-		D1D8913B23008A0B0079CF18 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
-		D1D8913D23008A6D0079CF18 /* LoginWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWorker.swift; sourceTree = "<group>"; };
-		D1D8914123008BA60079CF18 /* TextFieldCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextFieldCell.xib; sourceTree = "<group>"; };
-		D1D8914423008C320079CF18 /* TextFieldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldTableViewCell.swift; sourceTree = "<group>"; };
-		D1D8914723008DE50079CF18 /* ButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonCell.xib; sourceTree = "<group>"; };
-		D1D8914923008E670079CF18 /* ButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTableViewCell.swift; sourceTree = "<group>"; };
+		D1CF8066232D558300CC3190 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		D1CF8069232D58FA00CC3190 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		D1EB6AB5232DAC1E00CAE5AB /* FeedWalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedWalletViewController.swift; sourceTree = "<group>"; };
+		D1EB6AB8232DAE7700CAE5AB /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		D1EB6ABB232DB08B00CAE5AB /* HowToUseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToUseViewController.swift; sourceTree = "<group>"; };
+		D1EB6ABE232DB0EB00CAE5AB /* WhereToUseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhereToUseViewController.swift; sourceTree = "<group>"; };
+		D1EB6AC1232DB1D900CAE5AB /* PurchaseHistoricViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseHistoricViewController.swift; sourceTree = "<group>"; };
 		F36D183AEE9E8CFB80E2BD06 /* Pods_Sound_Gate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sound_Gate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -97,12 +79,6 @@
 			isa = PBXGroup;
 			children = (
 				D1B558062313086E00593EED /* SignInViewController.swift */,
-				D1B55808231308BA00593EED /* SignInInteractor.swift */,
-				D1B5580A231308E700593EED /* SignInPresenter.swift */,
-				D1B5580C231308F900593EED /* SignInWorker.swift */,
-				D1B5580E2313092700593EED /* SignInRouter.swift */,
-				D1B558102313093D00593EED /* SignInModel.swift */,
-				D1B558122313095A00593EED /* SignInConfigurator.swift */,
 			);
 			path = SignIn;
 			sourceTree = "<group>";
@@ -129,10 +105,14 @@
 			isa = PBXGroup;
 			children = (
 				D1BF347122825C99004CA111 /* AppDelegate.swift */,
-				D1D8914023008B800079CF18 /* Reusable Cells */,
 				D1D891322300892F0079CF18 /* Login  */,
 				D1B558052313081B00593EED /* SignIn */,
 				D1BF3818231346F9001FF2D3 /* Wallet */,
+				D1EB6AB4232DABF300CAE5AB /* FeedWallet */,
+				D1EB6AB7232DAE5400CAE5AB /* Profile */,
+				D1EB6ABD232DB0BE00CAE5AB /* WhereToUse */,
+				D1EB6ABA232DB06C00CAE5AB /* HowToUse */,
+				D1EB6AC0232DB1AE00CAE5AB /* PurchaseHistoric */,
 				D1BF347522825C99004CA111 /* Main.storyboard */,
 				D1BF347822825C9B004CA111 /* Assets.xcassets */,
 				D1BF347A22825C9B004CA111 /* LaunchScreen.storyboard */,
@@ -153,41 +133,50 @@
 			isa = PBXGroup;
 			children = (
 				D1BF347322825C99004CA111 /* LoginViewController.swift */,
-				D1D89135230089820079CF18 /* LoginInteractor.swift */,
-				D1D89137230089A90079CF18 /* LoginPresenter.swift */,
-				D1D8913B23008A0B0079CF18 /* LoginModel.swift */,
-				D1D891332300896E0079CF18 /* LoginRouter.swift */,
-				D1D89139230089F70079CF18 /* LoginConfigurator.swift */,
-				D1D8913D23008A6D0079CF18 /* LoginWorker.swift */,
+				D1CF8066232D558300CC3190 /* LoginService.swift */,
+				D1CF8069232D58FA00CC3190 /* LoginModel.swift */,
 			);
 			path = "Login ";
 			sourceTree = "<group>";
 		};
-		D1D8914023008B800079CF18 /* Reusable Cells */ = {
+		D1EB6AB4232DABF300CAE5AB /* FeedWallet */ = {
 			isa = PBXGroup;
 			children = (
-				D1D8914623008D680079CF18 /* ButtonCell */,
-				D1D8914323008C080079CF18 /* TextFieldCell */,
+				D1EB6AB5232DAC1E00CAE5AB /* FeedWalletViewController.swift */,
 			);
-			path = "Reusable Cells";
+			path = FeedWallet;
 			sourceTree = "<group>";
 		};
-		D1D8914323008C080079CF18 /* TextFieldCell */ = {
+		D1EB6AB7232DAE5400CAE5AB /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				D1D8914123008BA60079CF18 /* TextFieldCell.xib */,
-				D1D8914423008C320079CF18 /* TextFieldTableViewCell.swift */,
+				D1EB6AB8232DAE7700CAE5AB /* ProfileViewController.swift */,
 			);
-			path = TextFieldCell;
+			path = Profile;
 			sourceTree = "<group>";
 		};
-		D1D8914623008D680079CF18 /* ButtonCell */ = {
+		D1EB6ABA232DB06C00CAE5AB /* HowToUse */ = {
 			isa = PBXGroup;
 			children = (
-				D1D8914723008DE50079CF18 /* ButtonCell.xib */,
-				D1D8914923008E670079CF18 /* ButtonTableViewCell.swift */,
+				D1EB6ABB232DB08B00CAE5AB /* HowToUseViewController.swift */,
 			);
-			path = ButtonCell;
+			path = HowToUse;
+			sourceTree = "<group>";
+		};
+		D1EB6ABD232DB0BE00CAE5AB /* WhereToUse */ = {
+			isa = PBXGroup;
+			children = (
+				D1EB6ABE232DB0EB00CAE5AB /* WhereToUseViewController.swift */,
+			);
+			path = WhereToUse;
+			sourceTree = "<group>";
+		};
+		D1EB6AC0232DB1AE00CAE5AB /* PurchaseHistoric */ = {
+			isa = PBXGroup;
+			children = (
+				D1EB6AC1232DB1D900CAE5AB /* PurchaseHistoricViewController.swift */,
+			);
+			path = PurchaseHistoric;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,9 +241,7 @@
 			files = (
 				D1BF347C22825C9B004CA111 /* LaunchScreen.storyboard in Resources */,
 				D1BF347922825C9B004CA111 /* Assets.xcassets in Resources */,
-				D1D8914823008DE50079CF18 /* ButtonCell.xib in Resources */,
 				D1BF347722825C99004CA111 /* Main.storyboard in Resources */,
-				D1D8914223008BA60079CF18 /* TextFieldCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,23 +300,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1B558072313086E00593EED /* SignInViewController.swift in Sources */,
-				D1D8913A230089F70079CF18 /* LoginConfigurator.swift in Sources */,
-				D1B558132313095A00593EED /* SignInConfigurator.swift in Sources */,
-				D1D8913C23008A0B0079CF18 /* LoginModel.swift in Sources */,
-				D1B5580D231308F900593EED /* SignInWorker.swift in Sources */,
 				D1BF381A2313472F001FF2D3 /* WalletViewController.swift in Sources */,
-				D1D89136230089820079CF18 /* LoginInteractor.swift in Sources */,
-				D1B558112313093D00593EED /* SignInModel.swift in Sources */,
 				D1BF347422825C99004CA111 /* LoginViewController.swift in Sources */,
-				D1B5580F2313092700593EED /* SignInRouter.swift in Sources */,
-				D1B5580B231308E700593EED /* SignInPresenter.swift in Sources */,
+				D1EB6ABF232DB0EB00CAE5AB /* WhereToUseViewController.swift in Sources */,
+				D1EB6AC2232DB1D900CAE5AB /* PurchaseHistoricViewController.swift in Sources */,
+				D1EB6ABC232DB08B00CAE5AB /* HowToUseViewController.swift in Sources */,
 				D1BF347222825C99004CA111 /* AppDelegate.swift in Sources */,
-				D1D891342300896E0079CF18 /* LoginRouter.swift in Sources */,
-				D1D8914523008C320079CF18 /* TextFieldTableViewCell.swift in Sources */,
-				D1B55809231308BA00593EED /* SignInInteractor.swift in Sources */,
-				D1D8914A23008E670079CF18 /* ButtonTableViewCell.swift in Sources */,
-				D1D89138230089A90079CF18 /* LoginPresenter.swift in Sources */,
-				D1D8913E23008A6D0079CF18 /* LoginWorker.swift in Sources */,
+				D1CF806A232D58FA00CC3190 /* LoginModel.swift in Sources */,
+				D1EB6AB6232DAC1E00CAE5AB /* FeedWalletViewController.swift in Sources */,
+				D1EB6AB9232DAE7700CAE5AB /* ProfileViewController.swift in Sources */,
+				D1CF8067232D558300CC3190 /* LoginService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

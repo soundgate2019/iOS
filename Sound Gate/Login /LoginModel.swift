@@ -2,24 +2,31 @@
 //  LoginModel.swift
 //  Sound Gate
 //
-//  Created by Matheus Martins on 11/08/19.
+//  Created by Matheus Martins on 14/09/19.
 //  Copyright © 2019 Matheus Martins. All rights reserved.
 //
 
-enum FetchLoginInfos {
-    struct Request { }
-    struct Response {
-        let labelText: String
-        let cellType: [CellType]
-        
-        enum CellType {
-            case textField(textField: String)
-            case buttonAction(actionText: String)
-            case buttonFinalization(finalizationText: String)
-        }
-    }
-    struct VO {
-        let labelText: String
-        let cellType: [FetchLoginInfos.Response.CellType]
-    }
+struct Login: Codable {
+    let login: String
+    let senha: String
+}
+
+struct User: Codable {
+    let cd: Int
+    let login: String
+    let senha: String
+    let nome: String
+    let cpf: Int
+    let rg: String
+    let nascimento: String
+    let telefone: Int
+    let saldo: Double
+    let endereco: Endereco
+}
+
+struct Endereco: Codable {
+    let cd: Int
+    let cep: String
+    let logradouro: String
+    let descricai: String
 }
