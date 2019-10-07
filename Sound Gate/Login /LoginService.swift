@@ -11,16 +11,36 @@ import Alamofire
 
 class LoginService {
     static let shared = LoginService()
-    
-    func login(user: String, password: String) {
-        guard let url = URL(string: "") else { return }
-        Alamofire.request(url, method: .post, parameters: ["login" : user, "senha" : password], encoding: JSONEncoding.default, headers: nil).responseJSON { (Response) in
-            switch Response.result {
+    static var userApp: User?
+    let loading = Loading()
+    func login(user: String, password: String, view: UIViewController) {
+        loading.playAnimations(view: view.view)
+        let link = "http://localhost:8080/SoundGateWB/Usuario/logar"
+        guard let url = URL(string: link) else { return }
+        Alamofire.request(url, method: .post, parameters: ["login" : user, "senha" : password], encoding: JSONEncoding.default).responseJSON { (response) in
+            switch response.result {
             case .success:
-            let teste = try! JSONDecoder().decode(User.self, from: Response.data!)
-                print(teste)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                    let teste = try! JSONDecoder().decode(User.self, from: response.data!)
+                    LoginService.userApp = teste
+                    let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                    let newViewController = storyBoard.instantiateViewController(withIdentifier: "Home") as! UITabBarController
+                    view.present(newViewController, animated: true, completion: nil)
+                }
+            
             case .failure(_):
-                print(user)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) {
+                    self.loading.stopAnimation()
+                    let login = view as! LoginViewController
+                    login.userTextField.layer.cornerRadius = login.userTextField.frame.height / 2
+                    login.userTextField.layer.borderWidth = 2
+                    login.userTextField.layer.borderColor = UIColor.red.cgColor
+                    login.userTextField.text = ""
+                    login.userTextField.placeholder = "Usuario ou senha incorretos"
+                    login.passwordTextField.layer.borderWidth = 2
+                    login.passwordTextField.layer.borderColor = UIColor.red.cgColor
+                    login.passwordTextField.text = ""
+                }
             }
         }
     }

@@ -10,12 +10,15 @@ import UIKit
 
 class SignInViewController: UIViewController {
     @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var birthTextField: UITextField!
     @IBOutlet weak var cpfTextField: UITextField!
     @IBOutlet weak var rgTextField: UITextField!
-    @IBOutlet weak var addresTextField: UITextField!
     @IBOutlet weak var phoneTextField: UITextField!
+    @IBOutlet weak var userTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var streetTextField: UITextField!
+    @IBOutlet weak var cepTextField: UITextField!
+    @IBOutlet weak var complemetationTexteField: UITextField!
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var dismissButton: UIButton!
     
@@ -24,9 +27,8 @@ class SignInViewController: UIViewController {
         registerButton.layer.cornerRadius = 8
         dismissButton.layer.cornerRadius = 8
         nameTextField.autocorrectionType = .no
-        emailTextField.autocorrectionType = .no
         rgTextField.autocorrectionType = .no
-        addresTextField.autocorrectionType = .no
+        phoneTextField.autocorrectionType = .no
         self.addDoneButtonOnKeyboard()
         
     }
@@ -45,26 +47,32 @@ class SignInViewController: UIViewController {
         doneToolbar.sizeToFit()
         
         self.nameTextField.inputAccessoryView = doneToolbar
-        self.emailTextField.inputAccessoryView = doneToolbar
         self.birthTextField.inputAccessoryView = doneToolbar
         self.cpfTextField.inputAccessoryView = doneToolbar
         self.rgTextField.inputAccessoryView = doneToolbar
-        self.addresTextField.inputAccessoryView = doneToolbar
         self.phoneTextField.inputAccessoryView = doneToolbar
+        self.userTextField.inputAccessoryView = doneToolbar
+        self.passwordTextField.inputAccessoryView = doneToolbar
+        self.streetTextField.inputAccessoryView = doneToolbar
+        self.cepTextField.inputAccessoryView = doneToolbar
+        self.complemetationTexteField.inputAccessoryView = doneToolbar
     }
     
     @objc func doneButtonAction() {
         self.nameTextField.resignFirstResponder()
-        self.emailTextField.resignFirstResponder()
         self.birthTextField.resignFirstResponder()
         self.cpfTextField.resignFirstResponder()
         self.rgTextField.resignFirstResponder()
-        self.addresTextField.resignFirstResponder()
         self.phoneTextField.resignFirstResponder()
+        self.userTextField.resignFirstResponder()
+        self.passwordTextField.resignFirstResponder()
+        self.streetTextField.resignFirstResponder()
+        self.cepTextField.resignFirstResponder()
+        self.complemetationTexteField.resignFirstResponder()
     }
     
     @IBAction func register(_ sender: Any) {
-        
+        SignInService.shared.registerNewUser(login: userTextField.text!, password: passwordTextField.text!, name: nameTextField.text!, cpf: Int(cpfTextField.text!)!, rg: rgTextField.text!, birthday: birthTextField.text!, phone: Int(phoneTextField.text!)!, cep: cepTextField.text!, street: streetTextField.text!, number: complemetationTexteField.text!)
     }
     
     @IBAction func dismiss(_ sender: Any) {

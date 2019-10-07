@@ -14,13 +14,19 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var userTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var sigInButton: UIButton!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loginButton.layer.cornerRadius = 8
+        sigInButton.layer.cornerRadius = 8
         passwordTextField.isSecureTextEntry = true
         userTextField.autocorrectionType = .no
+        userTextField.layer.cornerRadius = userTextField.frame.height / 2
+        userTextField.layer.masksToBounds = true
+        passwordTextField.layer.cornerRadius = passwordTextField.frame.height / 2
+        passwordTextField.layer.masksToBounds = true
         self.addDoneButtonOnKeyboard()
     }
     
@@ -47,20 +53,14 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func LogIn(_ sender: Any) {
-        if userTextField.text != "Scizor" && passwordTextField.text != "abcd" {
-            loginLabel.text = "Usuário ou senha incorretos"
-            loginLabel.textColor = .red
-        } else {
-            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let newViewController = storyBoard.instantiateViewController(withIdentifier: "Home") as! UITabBarController
-            self.present(newViewController, animated: true, completion: nil)
-        }
+        view.endEditing(true)
         
-//        if let user = userTextField.text, let password = passwordTextField.text {
-//            LoginService.shared.login(user: user, password: password)
-//        }
+        if let user = userTextField.text, let password = passwordTextField.text {
+            LoginService.shared.login(user: user, password: password, view: self)
+        }
     }
     
+
     @IBAction func routeToRegister(_ sender: Any) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "SignInViewController") as! SignInViewController

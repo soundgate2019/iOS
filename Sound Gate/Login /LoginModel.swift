@@ -20,7 +20,7 @@ struct User: Codable {
     let rg: String
     let nascimento: String
     let telefone: Int
-    let saldo: Double
+    var saldo: Double
     let endereco: Endereco
 }
 
@@ -28,5 +28,5 @@ struct Endereco: Codable {
     let cd: Int
     let cep: String
     let logradouro: String
-    let descricai: String
+    let descricao: String
 }

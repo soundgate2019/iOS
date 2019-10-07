@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		8523FDCACEE3D7769A8945C7 /* Pods_Sound_Gate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F36D183AEE9E8CFB80E2BD06 /* Pods_Sound_Gate.framework */; };
+		D11F43DA234A463000DAA713 /* WhereToUseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11F43D9234A463000DAA713 /* WhereToUseModels.swift */; };
+		D11F43DD234A4A1400DAA713 /* TicketCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D11F43DC234A4A1400DAA713 /* TicketCellTableViewCell.xib */; };
+		D11F43DF234A4C4600DAA713 /* TicketCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11F43DE234A4C4600DAA713 /* TicketCellTableViewCell.swift */; };
+		D11F43E2234A9CD800DAA713 /* TicketStoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D11F43E1234A9CD800DAA713 /* TicketStoreTableViewCell.xib */; };
+		D11F43E4234A9FB700DAA713 /* TicketStoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11F43E3234A9FB700DAA713 /* TicketStoreTableViewCell.swift */; };
+		D11F43E6234AA61300DAA713 /* how_to_use.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = D11F43E5234AA61200DAA713 /* how_to_use.mp4 */; };
 		D1B558072313086E00593EED /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B558062313086E00593EED /* SignInViewController.swift */; };
 		D1BF347222825C99004CA111 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BF347122825C99004CA111 /* AppDelegate.swift */; };
 		D1BF347422825C99004CA111 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BF347322825C99004CA111 /* LoginViewController.swift */; };
@@ -15,6 +21,14 @@
 		D1BF347922825C9B004CA111 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1BF347822825C9B004CA111 /* Assets.xcassets */; };
 		D1BF347C22825C9B004CA111 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1BF347A22825C9B004CA111 /* LaunchScreen.storyboard */; };
 		D1BF381A2313472F001FF2D3 /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BF38192313472F001FF2D3 /* WalletViewController.swift */; };
+		D1C641072336CDA400086250 /* Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C641052336CDA300086250 /* Loading.swift */; };
+		D1C641212336D84A00086250 /* LoadingLottie.json in Resources */ = {isa = PBXBuildFile; fileRef = D1C641202336D84A00086250 /* LoadingLottie.json */; };
+		D1C641232336ED9A00086250 /* SignInService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C641222336ED9A00086250 /* SignInService.swift */; };
+		D1C641252336F86700086250 /* FeedWalletService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C641242336F86700086250 /* FeedWalletService.swift */; };
+		D1C64127233703FD00086250 /* PurchaseHistoricModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C64126233703FD00086250 /* PurchaseHistoricModel.swift */; };
+		D1C641292337048600086250 /* PurchaseHistoricService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C641282337048600086250 /* PurchaseHistoricService.swift */; };
+		D1C6412D2337087500086250 /* PurchaseHistoricTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1C6412C2337087500086250 /* PurchaseHistoricTableViewCell.xib */; };
+		D1C6412F23370A2000086250 /* PurchaseHistoricTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C6412E23370A2000086250 /* PurchaseHistoricTableViewCell.swift */; };
 		D1CF8067232D558300CC3190 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CF8066232D558300CC3190 /* LoginService.swift */; };
 		D1CF806A232D58FA00CC3190 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CF8069232D58FA00CC3190 /* LoginModel.swift */; };
 		D1EB6AB6232DAC1E00CAE5AB /* FeedWalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EB6AB5232DAC1E00CAE5AB /* FeedWalletViewController.swift */; };
@@ -27,6 +41,12 @@
 /* Begin PBXFileReference section */
 		07003D35169139702B2C5754 /* Pods-Sound Gate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sound Gate.release.xcconfig"; path = "Target Support Files/Pods-Sound Gate/Pods-Sound Gate.release.xcconfig"; sourceTree = "<group>"; };
 		582A1A6B58A74678C5FD0BD5 /* Pods-Sound Gate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sound Gate.debug.xcconfig"; path = "Target Support Files/Pods-Sound Gate/Pods-Sound Gate.debug.xcconfig"; sourceTree = "<group>"; };
+		D11F43D9234A463000DAA713 /* WhereToUseModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhereToUseModels.swift; sourceTree = "<group>"; };
+		D11F43DC234A4A1400DAA713 /* TicketCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TicketCellTableViewCell.xib; sourceTree = "<group>"; };
+		D11F43DE234A4C4600DAA713 /* TicketCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketCellTableViewCell.swift; sourceTree = "<group>"; };
+		D11F43E1234A9CD800DAA713 /* TicketStoreTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TicketStoreTableViewCell.xib; sourceTree = "<group>"; };
+		D11F43E3234A9FB700DAA713 /* TicketStoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketStoreTableViewCell.swift; sourceTree = "<group>"; };
+		D11F43E5234AA61200DAA713 /* how_to_use.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = how_to_use.mp4; sourceTree = "<group>"; };
 		D1B558062313086E00593EED /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SignInViewController.swift; path = "Sound Gate/Reusable Cells/SignInViewController.swift"; sourceTree = SOURCE_ROOT; };
 		D1BF346E22825C99004CA111 /* Sound Gate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sound Gate.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1BF347122825C99004CA111 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +56,14 @@
 		D1BF347B22825C9B004CA111 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D1BF347D22825C9B004CA111 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D1BF38192313472F001FF2D3 /* WalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
+		D1C641052336CDA300086250 /* Loading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loading.swift; sourceTree = "<group>"; };
+		D1C641202336D84A00086250 /* LoadingLottie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LoadingLottie.json; sourceTree = "<group>"; };
+		D1C641222336ED9A00086250 /* SignInService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInService.swift; sourceTree = "<group>"; };
+		D1C641242336F86700086250 /* FeedWalletService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedWalletService.swift; sourceTree = "<group>"; };
+		D1C64126233703FD00086250 /* PurchaseHistoricModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseHistoricModel.swift; sourceTree = "<group>"; };
+		D1C641282337048600086250 /* PurchaseHistoricService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseHistoricService.swift; sourceTree = "<group>"; };
+		D1C6412C2337087500086250 /* PurchaseHistoricTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PurchaseHistoricTableViewCell.xib; sourceTree = "<group>"; };
+		D1C6412E23370A2000086250 /* PurchaseHistoricTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseHistoricTableViewCell.swift; sourceTree = "<group>"; };
 		D1CF8066232D558300CC3190 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		D1CF8069232D58FA00CC3190 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		D1EB6AB5232DAC1E00CAE5AB /* FeedWalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedWalletViewController.swift; sourceTree = "<group>"; };
@@ -75,10 +103,29 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		D11F43DB234A49FA00DAA713 /* TicketCell */ = {
+			isa = PBXGroup;
+			children = (
+				D11F43DC234A4A1400DAA713 /* TicketCellTableViewCell.xib */,
+				D11F43DE234A4C4600DAA713 /* TicketCellTableViewCell.swift */,
+			);
+			path = TicketCell;
+			sourceTree = "<group>";
+		};
+		D11F43E0234A9C5D00DAA713 /* TicketStore */ = {
+			isa = PBXGroup;
+			children = (
+				D11F43E1234A9CD800DAA713 /* TicketStoreTableViewCell.xib */,
+				D11F43E3234A9FB700DAA713 /* TicketStoreTableViewCell.swift */,
+			);
+			path = TicketStore;
+			sourceTree = "<group>";
+		};
 		D1B558052313081B00593EED /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
 				D1B558062313086E00593EED /* SignInViewController.swift */,
+				D1C641222336ED9A00086250 /* SignInService.swift */,
 			);
 			path = SignIn;
 			sourceTree = "<group>";
@@ -104,6 +151,7 @@
 		D1BF347022825C99004CA111 /* Sound Gate */ = {
 			isa = PBXGroup;
 			children = (
+				D1C641032336CDA300086250 /* Loading */,
 				D1BF347122825C99004CA111 /* AppDelegate.swift */,
 				D1D891322300892F0079CF18 /* Login  */,
 				D1B558052313081B00593EED /* SignIn */,
@@ -114,6 +162,7 @@
 				D1EB6ABA232DB06C00CAE5AB /* HowToUse */,
 				D1EB6AC0232DB1AE00CAE5AB /* PurchaseHistoric */,
 				D1BF347522825C99004CA111 /* Main.storyboard */,
+				D11F43E5234AA61200DAA713 /* how_to_use.mp4 */,
 				D1BF347822825C9B004CA111 /* Assets.xcassets */,
 				D1BF347A22825C9B004CA111 /* LaunchScreen.storyboard */,
 				D1BF347D22825C9B004CA111 /* Info.plist */,
@@ -127,6 +176,24 @@
 				D1BF38192313472F001FF2D3 /* WalletViewController.swift */,
 			);
 			path = Wallet;
+			sourceTree = "<group>";
+		};
+		D1C641032336CDA300086250 /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				D1C641052336CDA300086250 /* Loading.swift */,
+				D1C641202336D84A00086250 /* LoadingLottie.json */,
+			);
+			path = Loading;
+			sourceTree = "<group>";
+		};
+		D1C6412A2337085400086250 /* PurchaseHistoric */ = {
+			isa = PBXGroup;
+			children = (
+				D1C6412C2337087500086250 /* PurchaseHistoricTableViewCell.xib */,
+				D1C6412E23370A2000086250 /* PurchaseHistoricTableViewCell.swift */,
+			);
+			path = PurchaseHistoric;
 			sourceTree = "<group>";
 		};
 		D1D891322300892F0079CF18 /* Login  */ = {
@@ -143,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				D1EB6AB5232DAC1E00CAE5AB /* FeedWalletViewController.swift */,
+				D1C641242336F86700086250 /* FeedWalletService.swift */,
 			);
 			path = FeedWallet;
 			sourceTree = "<group>";
@@ -166,7 +234,10 @@
 		D1EB6ABD232DB0BE00CAE5AB /* WhereToUse */ = {
 			isa = PBXGroup;
 			children = (
+				D11F43E0234A9C5D00DAA713 /* TicketStore */,
+				D11F43DB234A49FA00DAA713 /* TicketCell */,
 				D1EB6ABE232DB0EB00CAE5AB /* WhereToUseViewController.swift */,
+				D11F43D9234A463000DAA713 /* WhereToUseModels.swift */,
 			);
 			path = WhereToUse;
 			sourceTree = "<group>";
@@ -174,7 +245,10 @@
 		D1EB6AC0232DB1AE00CAE5AB /* PurchaseHistoric */ = {
 			isa = PBXGroup;
 			children = (
+				D1C6412A2337085400086250 /* PurchaseHistoric */,
 				D1EB6AC1232DB1D900CAE5AB /* PurchaseHistoricViewController.swift */,
+				D1C64126233703FD00086250 /* PurchaseHistoricModel.swift */,
+				D1C641282337048600086250 /* PurchaseHistoricService.swift */,
 			);
 			path = PurchaseHistoric;
 			sourceTree = "<group>";
@@ -240,7 +314,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1BF347C22825C9B004CA111 /* LaunchScreen.storyboard in Resources */,
+				D11F43E6234AA61300DAA713 /* how_to_use.mp4 in Resources */,
+				D11F43DD234A4A1400DAA713 /* TicketCellTableViewCell.xib in Resources */,
+				D1C641212336D84A00086250 /* LoadingLottie.json in Resources */,
 				D1BF347922825C9B004CA111 /* Assets.xcassets in Resources */,
+				D1C6412D2337087500086250 /* PurchaseHistoricTableViewCell.xib in Resources */,
+				D11F43E2234A9CD800DAA713 /* TicketStoreTableViewCell.xib in Resources */,
 				D1BF347722825C99004CA111 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,12 +337,14 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Sound Gate/Pods-Sound Gate-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -301,15 +382,24 @@
 			files = (
 				D1B558072313086E00593EED /* SignInViewController.swift in Sources */,
 				D1BF381A2313472F001FF2D3 /* WalletViewController.swift in Sources */,
+				D1C64127233703FD00086250 /* PurchaseHistoricModel.swift in Sources */,
 				D1BF347422825C99004CA111 /* LoginViewController.swift in Sources */,
 				D1EB6ABF232DB0EB00CAE5AB /* WhereToUseViewController.swift in Sources */,
+				D11F43E4234A9FB700DAA713 /* TicketStoreTableViewCell.swift in Sources */,
 				D1EB6AC2232DB1D900CAE5AB /* PurchaseHistoricViewController.swift in Sources */,
 				D1EB6ABC232DB08B00CAE5AB /* HowToUseViewController.swift in Sources */,
 				D1BF347222825C99004CA111 /* AppDelegate.swift in Sources */,
+				D11F43DA234A463000DAA713 /* WhereToUseModels.swift in Sources */,
 				D1CF806A232D58FA00CC3190 /* LoginModel.swift in Sources */,
+				D1C641292337048600086250 /* PurchaseHistoricService.swift in Sources */,
 				D1EB6AB6232DAC1E00CAE5AB /* FeedWalletViewController.swift in Sources */,
+				D1C641232336ED9A00086250 /* SignInService.swift in Sources */,
 				D1EB6AB9232DAE7700CAE5AB /* ProfileViewController.swift in Sources */,
+				D1C641072336CDA400086250 /* Loading.swift in Sources */,
+				D1C641252336F86700086250 /* FeedWalletService.swift in Sources */,
 				D1CF8067232D558300CC3190 /* LoginService.swift in Sources */,
+				D1C6412F23370A2000086250 /* PurchaseHistoricTableViewCell.swift in Sources */,
+				D11F43DF234A4C4600DAA713 /* TicketCellTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

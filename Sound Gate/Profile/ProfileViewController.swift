@@ -15,17 +15,28 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var cpfLabel: UILabel!
     @IBOutlet weak var rgLabel: UILabel!
     @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var addressLabel: UITextField!
+    @IBOutlet weak var addressTextField: UITextField!
     @IBOutlet weak var phoneTextField: UITextField!
     @IBOutlet weak var refreshButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.addDoneButtonOnKeyboard()
+        setupInfos(user: LoginService.userApp!)
         refreshButton.layer.cornerRadius = 8
         emailTextField.autocorrectionType = .no
-        addressLabel.autocorrectionType = .no
+        addressTextField.autocorrectionType = .no
         phoneTextField.autocorrectionType = .no
+    }
+    
+    func setupInfos(user: User) {
+        nameLabel.text = user.nome
+        let date = user.nascimento.split(separator: "T")
+        birthDayLabel.text = "\(date[0])"
+        cpfLabel.text = "\(user.cpf)"
+        rgLabel.text = user.rg
+        addressTextField.placeholder = user.endereco.logradouro
+        phoneTextField.placeholder = "\(user.telefone)"
     }
     
     func addDoneButtonOnKeyboard() {
@@ -42,13 +53,13 @@ class ProfileViewController: UIViewController {
         doneToolbar.sizeToFit()
         
         self.emailTextField.inputAccessoryView = doneToolbar
-        self.addressLabel.inputAccessoryView = doneToolbar
+        self.addressTextField.inputAccessoryView = doneToolbar
         self.phoneTextField.inputAccessoryView = doneToolbar
     }
     
     @objc func doneButtonAction() {
         self.emailTextField.resignFirstResponder()
-        self.addressLabel.resignFirstResponder()
+        self.addressTextField.resignFirstResponder()
         self.phoneTextField.resignFirstResponder()
     }
     

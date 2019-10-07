@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="TicketCell" rowHeight="210" id="v6e-Z9-SB5" customClass="TicketCellTableViewCell" customModule="Sound_Gate" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="179"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="v6e-Z9-SB5" id="Gos-Px-OXR">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="178.66666666666666"/>
+                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome do evento" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQ7-JE-aCr">
+                        <rect key="frame" x="105" y="20" width="125.66666666666669" height="19.333333333333329"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data do evento" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xrI-SJ-iaf">
+                        <rect key="frame" x="105" y="44.333333333333329" width="110" height="19.333333333333329"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="joker_poster" translatesAutoresizingMaskIntoConstraints="NO" id="V55-qA-kpp">
+                        <rect key="frame" x="5" y="20" width="80" height="138"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="138" id="Ibu-7x-rZL"/>
+                            <constraint firstAttribute="width" constant="80" id="tg3-T2-U9s"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Endereço do Evento" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="pg8-52-my8">
+                        <rect key="frame" x="105" y="68.666666666666671" width="289" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="FQ7-JE-aCr" firstAttribute="leading" secondItem="xrI-SJ-iaf" secondAttribute="leading" id="BNa-V0-Zx2"/>
+                    <constraint firstItem="pg8-52-my8" firstAttribute="leading" secondItem="V55-qA-kpp" secondAttribute="trailing" constant="20" id="Gwm-n9-HPJ"/>
+                    <constraint firstAttribute="trailing" secondItem="pg8-52-my8" secondAttribute="trailing" constant="20" id="IYe-pd-eEi"/>
+                    <constraint firstItem="FQ7-JE-aCr" firstAttribute="top" secondItem="V55-qA-kpp" secondAttribute="top" id="R61-My-Pmt"/>
+                    <constraint firstItem="V55-qA-kpp" firstAttribute="leading" secondItem="Gos-Px-OXR" secondAttribute="leading" constant="5" id="W1s-yi-mIY"/>
+                    <constraint firstAttribute="bottom" secondItem="V55-qA-kpp" secondAttribute="bottom" constant="20" id="air-g1-b9h"/>
+                    <constraint firstItem="V55-qA-kpp" firstAttribute="top" secondItem="Gos-Px-OXR" secondAttribute="top" constant="20" id="d2X-f2-sFk"/>
+                    <constraint firstItem="xrI-SJ-iaf" firstAttribute="top" secondItem="FQ7-JE-aCr" secondAttribute="bottom" constant="5" id="iSZ-zs-8J7"/>
+                    <constraint firstItem="xrI-SJ-iaf" firstAttribute="leading" secondItem="pg8-52-my8" secondAttribute="leading" id="lno-eH-dXc"/>
+                    <constraint firstItem="pg8-52-my8" firstAttribute="top" secondItem="xrI-SJ-iaf" secondAttribute="bottom" constant="5" id="pAJ-UT-6Y2"/>
+                    <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="pg8-52-my8" secondAttribute="bottom" constant="10" id="xCn-eO-hcg"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="addressEventLabel" destination="pg8-52-my8" id="kgK-En-fQh"/>
+                <outlet property="eventDateLabel" destination="xrI-SJ-iaf" id="Ust-Ot-ZV7"/>
+                <outlet property="eventImageView" destination="V55-qA-kpp" id="nE0-EQ-yad"/>
+                <outlet property="eventNameLabel" destination="FQ7-JE-aCr" id="YzV-Ua-ij2"/>
+            </connections>
+            <point key="canvasLocation" x="70.400000000000006" y="94.21182266009852"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="joker_poster" width="800" height="1186"/>
+    </resources>
+</document>

@@ -54,7 +54,7 @@ class FeedWalletViewController: UIViewController {
     }
     
     @IBAction func finalizeBuy(_ sender: Any) {
-        
+        FeedWalletService.shared.updateAvailableMoney(value: Double(valueTextField.text!) as! Double)
     }
     
 }

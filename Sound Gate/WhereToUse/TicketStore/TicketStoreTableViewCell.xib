@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="TicketStoreCell" rowHeight="172" id="29G-pw-6dD" customClass="TicketStoreTableViewCell" customModule="Sound_Gate" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="172"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="29G-pw-6dD" id="OXg-cO-2KQ">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="171.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="4_amigos" translatesAutoresizingMaskIntoConstraints="NO" id="MiG-Ps-GTl">
+                        <rect key="frame" x="10" y="20" width="70" height="130"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="130" id="4sa-yb-oOn"/>
+                            <constraint firstAttribute="width" constant="70" id="Zml-YB-FVa"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4 Amigos Stund-Up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lns-3S-an5">
+                        <rect key="frame" x="90" y="20" width="161.5" height="21"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="De 2019-11-01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QbE-oq-IVr">
+                        <rect key="frame" x="90" y="46" width="112.5" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Até 2019-11-31" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cWt-w2-viy">
+                        <rect key="frame" x="90" y="72" width="116.5" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mm3-Q3-Oyl">
+                        <rect key="frame" x="90" y="103" width="304" height="30"/>
+                        <color key="backgroundColor" red="0.76470588240000004" green="0.94117647059999998" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <state key="normal" title="Detalhes/ comprar">
+                            <color key="titleColor" red="0.20392156859999999" green="0.1215686275" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                    </button>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="QbE-oq-IVr" firstAttribute="leading" secondItem="lns-3S-an5" secondAttribute="leading" id="0yL-Cs-Wdi"/>
+                    <constraint firstAttribute="bottom" secondItem="MiG-Ps-GTl" secondAttribute="bottom" constant="20" id="ANx-s0-pLb"/>
+                    <constraint firstItem="MiG-Ps-GTl" firstAttribute="top" secondItem="OXg-cO-2KQ" secondAttribute="top" constant="20" id="AzT-Ux-ewj"/>
+                    <constraint firstItem="cWt-w2-viy" firstAttribute="leading" secondItem="QbE-oq-IVr" secondAttribute="leading" id="Emx-BB-f2D"/>
+                    <constraint firstItem="lns-3S-an5" firstAttribute="leading" secondItem="MiG-Ps-GTl" secondAttribute="trailing" constant="10" id="RLy-Ly-fhg"/>
+                    <constraint firstItem="lns-3S-an5" firstAttribute="top" secondItem="MiG-Ps-GTl" secondAttribute="top" id="RiE-dn-rjZ"/>
+                    <constraint firstAttribute="trailing" secondItem="Mm3-Q3-Oyl" secondAttribute="trailing" constant="20" id="XJ4-8k-JOD"/>
+                    <constraint firstItem="cWt-w2-viy" firstAttribute="top" secondItem="QbE-oq-IVr" secondAttribute="bottom" constant="5" id="ebq-DX-ZDJ"/>
+                    <constraint firstAttribute="bottom" secondItem="Mm3-Q3-Oyl" secondAttribute="bottom" constant="30" id="jnV-Gy-3Uj"/>
+                    <constraint firstItem="Mm3-Q3-Oyl" firstAttribute="leading" secondItem="cWt-w2-viy" secondAttribute="leading" id="kIr-GL-yRy"/>
+                    <constraint firstItem="MiG-Ps-GTl" firstAttribute="leading" secondItem="OXg-cO-2KQ" secondAttribute="leading" constant="10" id="lJ5-3N-vWY"/>
+                    <constraint firstItem="Mm3-Q3-Oyl" firstAttribute="top" secondItem="cWt-w2-viy" secondAttribute="bottom" constant="10" id="p8T-Fz-gG1"/>
+                    <constraint firstItem="QbE-oq-IVr" firstAttribute="top" secondItem="lns-3S-an5" secondAttribute="bottom" constant="5" id="uYw-2S-Ulx"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="buyButton" destination="Mm3-Q3-Oyl" id="fFD-QH-M0S"/>
+                <outlet property="eventImageView" destination="MiG-Ps-GTl" id="X8q-r2-1ch"/>
+                <outlet property="eventNameLabel" destination="lns-3S-an5" id="YFE-AA-pQy"/>
+                <outlet property="fromDateLabel" destination="QbE-oq-IVr" id="3jb-A8-h96"/>
+                <outlet property="toDateLabel" destination="cWt-w2-viy" id="i8e-6C-J8k"/>
+            </connections>
+            <point key="canvasLocation" x="150.72463768115944" y="68.303571428571431"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="4_amigos" width="540" height="800"/>
+    </resources>
+</document>

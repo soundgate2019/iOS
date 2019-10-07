@@ -7,5 +7,6 @@ target 'Sound Gate' do
 
   pod 'ChirpSDK'
   pod 'Alamofire'
+  pod 'lottie-ios'
 
 end
