@@ -19,18 +19,26 @@ class WhereToUseViewController: UIViewController {
         tableViewContent.layer.cornerRadius = 8
         tableViewContent.register(UINib(nibName: "TicketCellTableViewCell", bundle: nil), forCellReuseIdentifier: "TicketCell")
         tableViewContent.register(UINib(nibName: "TicketStoreTableViewCell", bundle: nil), forCellReuseIdentifier: "TicketStoreCell")
-        
-        
     }
     @IBAction func switchTableViewController(_ sender: UISegmentedControl) {
         tableViewContent.reloadData()
     }
-    
-    
 }
 
 extension WhereToUseViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        if segmentedControl.selectedSegmentIndex == 1 {
+            return true
+        } else {
+            return false
+        }
+    }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            print("ok")
+        }
+    }
 }
 
 extension WhereToUseViewController: UITableViewDataSource {
@@ -59,9 +67,13 @@ extension WhereToUseViewController: UITableViewDataSource {
             cell.eventDateLabel.textColor = .white
             cell.addressEventLabel.text = "Avenida Deputado cantídio sampaio 4822\nVila Souza\nCEP: 02860-001"
             cell.addressEventLabel.textColor = .white
+            
+            func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+                if editingStyle == .delete {
+                    print("ok")
+                }
+            }
             return cell
         }
     }
-    
-    
 }

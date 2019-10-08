@@ -12,8 +12,10 @@ import AVFoundation
 
 class HowToUseViewController: UIViewController {
 
+    @IBOutlet weak var watchButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        watchButton.layer.cornerRadius = 8
     }
     
     @IBAction func playVideo(_ sender: Any) {

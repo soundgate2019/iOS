@@ -556,35 +556,50 @@
                                     <constraint firstAttribute="height" constant="200" id="cfO-9Q-WKu"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="meD-8f-MDU">
-                                <rect key="frame" x="22" y="318.66666666666669" width="370" height="220.00000000000006"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="howToUse" translatesAutoresizingMaskIntoConstraints="NO" id="1GI-75-LRv">
+                                <rect key="frame" x="20" y="230" width="374" height="198"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="370" id="8yM-bR-x6E"/>
-                                    <constraint firstAttribute="height" constant="220" id="RKZ-Tc-WpM"/>
+                                    <constraint firstAttribute="width" constant="374" id="aIu-eI-TgN"/>
+                                    <constraint firstAttribute="height" constant="198" id="qu5-Xv-wfw"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="howToUse"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Quq-Ko-nnD">
+                                <rect key="frame" x="20" y="458" width="374" height="48"/>
+                                <color key="backgroundColor" red="0.20392156859999999" green="0.1215686275" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Assistir Explicação">
+                                    <color key="titleColor" red="0.76470588240000004" green="0.94117647059999998" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
-                                    <action selector="playVideo:" destination="hJF-wl-607" eventType="touchUpInside" id="w2l-lE-TnZ"/>
+                                    <action selector="finalizeBuy:" destination="EWY-GT-Xfd" eventType="touchUpInside" id="jbV-nS-Hjf"/>
+                                    <action selector="playVideo:" destination="hJF-wl-607" eventType="touchUpInside" id="E2Q-e7-WQl"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.76470588240000004" green="0.94117647059999998" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="meD-8f-MDU" firstAttribute="centerY" secondItem="yRM-1m-xDV" secondAttribute="centerY" id="2aU-gc-LEl"/>
                             <constraint firstItem="yRM-1m-xDV" firstAttribute="trailing" secondItem="jtR-Gd-93k" secondAttribute="trailing" constant="20" id="AU3-w3-M5G"/>
+                            <constraint firstItem="yRM-1m-xDV" firstAttribute="trailing" secondItem="Quq-Ko-nnD" secondAttribute="trailing" constant="20" id="BmX-lQ-JBX"/>
+                            <constraint firstItem="Quq-Ko-nnD" firstAttribute="leading" secondItem="yRM-1m-xDV" secondAttribute="leading" constant="20" id="FqA-1P-TUm"/>
                             <constraint firstItem="jtR-Gd-93k" firstAttribute="leading" secondItem="yRM-1m-xDV" secondAttribute="leading" constant="20" id="H06-c1-kup"/>
                             <constraint firstItem="hcb-rY-hVm" firstAttribute="leading" secondItem="yRM-1m-xDV" secondAttribute="leading" constant="60" id="MD7-w1-0da"/>
+                            <constraint firstItem="1GI-75-LRv" firstAttribute="top" secondItem="jtR-Gd-93k" secondAttribute="bottom" constant="120" id="Uzq-dN-CSa"/>
+                            <constraint firstItem="1GI-75-LRv" firstAttribute="centerX" secondItem="yRM-1m-xDV" secondAttribute="centerX" id="Vlv-rq-8dI"/>
                             <constraint firstAttribute="bottom" secondItem="hcb-rY-hVm" secondAttribute="bottom" constant="5" id="W7S-kL-cup"/>
-                            <constraint firstItem="yRM-1m-xDV" firstAttribute="trailing" secondItem="meD-8f-MDU" secondAttribute="trailing" constant="22" id="YMx-N1-rs7"/>
+                            <constraint firstItem="yRM-1m-xDV" firstAttribute="trailing" secondItem="1GI-75-LRv" secondAttribute="trailing" constant="20" id="XB3-e0-tAz"/>
+                            <constraint firstItem="1GI-75-LRv" firstAttribute="leading" secondItem="yRM-1m-xDV" secondAttribute="leading" constant="20" id="c6R-Ho-GEh"/>
                             <constraint firstItem="jtR-Gd-93k" firstAttribute="top" secondItem="yRM-1m-xDV" secondAttribute="top" constant="30" id="dIt-ve-3fz"/>
+                            <constraint firstItem="Quq-Ko-nnD" firstAttribute="top" secondItem="1GI-75-LRv" secondAttribute="bottom" constant="30" id="jsN-WN-Bhd"/>
                             <constraint firstItem="yRM-1m-xDV" firstAttribute="trailing" secondItem="hcb-rY-hVm" secondAttribute="trailing" constant="60" id="nLC-ax-AY2"/>
-                            <constraint firstItem="meD-8f-MDU" firstAttribute="leading" secondItem="yRM-1m-xDV" secondAttribute="leading" constant="22" id="tt3-DQ-aw2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yRM-1m-xDV"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Como Usar" image="HowToIcon" id="IaB-CV-F7r">
                         <color key="badgeColor" red="0.20392156859999999" green="0.1215686275" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="watchButton" destination="Quq-Ko-nnD" id="pHF-76-aOj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VVy-BS-Sc6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

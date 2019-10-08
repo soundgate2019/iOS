@@ -15,21 +15,21 @@ class LoginService {
     let loading = Loading()
     func login(user: String, password: String, view: UIViewController) {
         loading.playAnimations(view: view.view)
-        let link = "http://localhost:8080/SoundGateWB/Usuario/logar"
+        let link = "https://soundgate.herokuapp.com/SoundGateWB/Usuario/logar"
         guard let url = URL(string: link) else { return }
         Alamofire.request(url, method: .post, parameters: ["login" : user, "senha" : password], encoding: JSONEncoding.default).responseJSON { (response) in
             switch response.result {
             case .success:
-                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                     let teste = try! JSONDecoder().decode(User.self, from: response.data!)
                     LoginService.userApp = teste
                     let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                     let newViewController = storyBoard.instantiateViewController(withIdentifier: "Home") as! UITabBarController
                     view.present(newViewController, animated: true, completion: nil)
-                }
+//                }
             
             case .failure(_):
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) {
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) {
                     self.loading.stopAnimation()
                     let login = view as! LoginViewController
                     login.userTextField.layer.cornerRadius = login.userTextField.frame.height / 2
@@ -40,7 +40,7 @@ class LoginService {
                     login.passwordTextField.layer.borderWidth = 2
                     login.passwordTextField.layer.borderColor = UIColor.red.cgColor
                     login.passwordTextField.text = ""
-                }
+//                }
             }
         }
     }
