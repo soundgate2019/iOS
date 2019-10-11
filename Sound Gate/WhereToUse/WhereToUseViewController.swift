@@ -11,7 +11,8 @@ import UIKit
 class WhereToUseViewController: UIViewController {
     @IBOutlet weak var tableViewContent: UITableView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
-    
+    var isLoading = true
+    let loading = Loading()
     override func viewDidLoad() {
         super.viewDidLoad()
         tableViewContent.delegate = self
@@ -19,9 +20,31 @@ class WhereToUseViewController: UIViewController {
         tableViewContent.layer.cornerRadius = 8
         tableViewContent.register(UINib(nibName: "TicketCellTableViewCell", bundle: nil), forCellReuseIdentifier: "TicketCell")
         tableViewContent.register(UINib(nibName: "TicketStoreTableViewCell", bundle: nil), forCellReuseIdentifier: "TicketStoreCell")
+        showLoading()
+        WhereToUseService.shared.loadTickets()
+        WhereToUseService.shared.loadEvents { (isLoading) -> Bool in
+            self.showLoading()
+            self.tableViewContent.reloadData()
+            return self.isLoading
+        }
+    }
+    
+    private func showLoading() {
+        if isLoading {
+            loading.playAnimations(view: view)
+            isLoading = false
+        } else {
+            loading.stopAnimation()
+        }
     }
     @IBAction func switchTableViewController(_ sender: UISegmentedControl) {
-        tableViewContent.reloadData()
+        showLoading()
+        WhereToUseService.shared.loadTickets()
+        WhereToUseService.shared.loadEvents { (isLoading) -> Bool in
+            self.showLoading()
+            self.tableViewContent.reloadData()
+            return self.isLoading
+        }
     }
 }
 
@@ -36,7 +59,11 @@ extension WhereToUseViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            print("ok")
+            WhereToUseService.shared.deleteTicket(ticketId: WhereToUseService.shared.tickets[indexPath.row].cd, eventId: WhereToUseService.shared.tickets[indexPath.row].evento.cd)
+            WhereToUseService.shared.loadEvents { (loading) -> Bool in
+                self.tableViewContent.reloadData()
+                return loading
+            }
         }
     }
 }
@@ -44,9 +71,9 @@ extension WhereToUseViewController: UITableViewDelegate {
 extension WhereToUseViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if segmentedControl.selectedSegmentIndex == 0 {
-            return 7
+            return WhereToUseService.shared.events.count
         } else {
-            return 7
+            return WhereToUseService.shared.tickets.count
         }
     }
     
@@ -54,18 +81,33 @@ extension WhereToUseViewController: UITableViewDataSource {
         if segmentedControl.selectedSegmentIndex == 0 {
             let cell = tableViewContent.dequeueReusableCell(withIdentifier: "TicketStoreCell") as! TicketStoreTableViewCell
             cell.backgroundColor = UIColor(red: 62/255, green: 31/255, blue: 74/255, alpha: 1)
-            cell.eventNameLabel.text = "4 Amigos Stund-up comedy"
-            cell.fromDateLabel.text = "De 2019-11-01"
-            cell.toDateLabel.text = "De 2019-11-31"
+            WhereToUseService.shared.downloadImage(from: WhereToUseService.shared.events[indexPath.row].fotoEvento) { (image, error) in
+                if let iconImage = image {
+                    DispatchQueue.main.async {
+                        cell.eventImageView.image = iconImage
+                    }
+                }
+            }
+            cell.eventNameLabel.text = WhereToUseService.shared.events[indexPath.row].nome
+            let dateFrom = WhereToUseService.shared.events[indexPath.row].primeiroDia.split(separator: "T")
+            cell.fromDateLabel.text = "De: " + "\(dateFrom[0])"
+            let dateTo = WhereToUseService.shared.events[indexPath.row].ultimoDia.split(separator: "T")
+            cell.toDateLabel.text = "Até: " + "\(dateFrom[0])"
             return cell
         } else {
+            let dateFrom = WhereToUseService.shared.tickets[indexPath.row].data.split(separator: "T")
             let cell = tableViewContent.dequeueReusableCell(withIdentifier: "TicketCell") as! TicketCellTableViewCell
             cell.backgroundColor = UIColor(red: 62/255, green: 31/255, blue: 74/255, alpha: 1)
-            cell.eventNameLabel.text = "Joker"
+            cell.eventNameLabel.text = WhereToUseService.shared.tickets[indexPath.row].evento.nome
             cell.eventNameLabel.textColor = .white
-            cell.eventDateLabel.text = "2019-10-11 \nHorário de inicio: 21:00"
+            WhereToUseService.shared.downloadImage(from: WhereToUseService.shared.tickets[indexPath.row].evento.fotoEvento) { (image, error) in
+                if let eventImage = image {
+                    cell.eventImageView.image = eventImage
+                }
+            }
+            cell.eventDateLabel.text = "\(dateFrom[0]) \nHorário de inicio: \(WhereToUseService.shared.tickets[indexPath.row].evento.horarioInicial)"
             cell.eventDateLabel.textColor = .white
-            cell.addressEventLabel.text = "Avenida Deputado cantídio sampaio 4822\nVila Souza\nCEP: 02860-001"
+            cell.addressEventLabel.text = "\(WhereToUseService.shared.tickets[indexPath.row].evento.endereco.logradouro)\n\(WhereToUseService.shared.tickets[indexPath.row].evento.endereco.descricao)\n\(WhereToUseService.shared.tickets[indexPath.row].evento.endereco.cep)"
             cell.addressEventLabel.textColor = .white
             
             func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -75,5 +117,12 @@ extension WhereToUseViewController: UITableViewDataSource {
             }
             return cell
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let sb: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "BuyTicketViewController") as! BuyTicketViewController
+        vc.event = WhereToUseService.shared.events[indexPath.row]
+        self.present(vc, animated: true, completion: nil)
     }
 }

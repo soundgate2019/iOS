@@ -6,7 +6,7 @@
 //  Copyright © 2019 Matheus Martins. All rights reserved.
 //
 
-struct Ingresso {
+struct Ingresso: Codable {
     let cd: Int
     let evento: Evento
     let data: String
@@ -14,7 +14,10 @@ struct Ingresso {
     let usuario: User
 }
 
-struct Evento {
+struct Eventos: Codable {
+    let evento: Evento
+}
+struct Evento: Codable {
     let cd: Int
     let nome: String
     let primeiroDia: String
@@ -28,7 +31,7 @@ struct Evento {
     let fotoEvento: String
 }
 
-struct Empresa {
+struct Empresa: Codable {
     let cd: Int
     let cnpj: Int
     let nome: String

@@ -31,6 +31,8 @@
 		D1C6412F23370A2000086250 /* PurchaseHistoricTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C6412E23370A2000086250 /* PurchaseHistoricTableViewCell.swift */; };
 		D1CF8067232D558300CC3190 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CF8066232D558300CC3190 /* LoginService.swift */; };
 		D1CF806A232D58FA00CC3190 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CF8069232D58FA00CC3190 /* LoginModel.swift */; };
+		D1E8238A234E0F9F00578E60 /* WhereToUseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E82389234E0F9F00578E60 /* WhereToUseService.swift */; };
+		D1E8238C234E22E400578E60 /* BuyTicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E8238B234E22E400578E60 /* BuyTicketViewController.swift */; };
 		D1EB6AB6232DAC1E00CAE5AB /* FeedWalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EB6AB5232DAC1E00CAE5AB /* FeedWalletViewController.swift */; };
 		D1EB6AB9232DAE7700CAE5AB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EB6AB8232DAE7700CAE5AB /* ProfileViewController.swift */; };
 		D1EB6ABC232DB08B00CAE5AB /* HowToUseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EB6ABB232DB08B00CAE5AB /* HowToUseViewController.swift */; };
@@ -66,6 +68,8 @@
 		D1C6412E23370A2000086250 /* PurchaseHistoricTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseHistoricTableViewCell.swift; sourceTree = "<group>"; };
 		D1CF8066232D558300CC3190 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		D1CF8069232D58FA00CC3190 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		D1E82389234E0F9F00578E60 /* WhereToUseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhereToUseService.swift; sourceTree = "<group>"; };
+		D1E8238B234E22E400578E60 /* BuyTicketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyTicketViewController.swift; sourceTree = "<group>"; };
 		D1EB6AB5232DAC1E00CAE5AB /* FeedWalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedWalletViewController.swift; sourceTree = "<group>"; };
 		D1EB6AB8232DAE7700CAE5AB /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		D1EB6ABB232DB08B00CAE5AB /* HowToUseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToUseViewController.swift; sourceTree = "<group>"; };
@@ -238,6 +242,8 @@
 				D11F43DB234A49FA00DAA713 /* TicketCell */,
 				D1EB6ABE232DB0EB00CAE5AB /* WhereToUseViewController.swift */,
 				D11F43D9234A463000DAA713 /* WhereToUseModels.swift */,
+				D1E82389234E0F9F00578E60 /* WhereToUseService.swift */,
+				D1E8238B234E22E400578E60 /* BuyTicketViewController.swift */,
 			);
 			path = WhereToUse;
 			sourceTree = "<group>";
@@ -385,7 +391,9 @@
 				D1C64127233703FD00086250 /* PurchaseHistoricModel.swift in Sources */,
 				D1BF347422825C99004CA111 /* LoginViewController.swift in Sources */,
 				D1EB6ABF232DB0EB00CAE5AB /* WhereToUseViewController.swift in Sources */,
+				D1E8238A234E0F9F00578E60 /* WhereToUseService.swift in Sources */,
 				D11F43E4234A9FB700DAA713 /* TicketStoreTableViewCell.swift in Sources */,
+				D1E8238C234E22E400578E60 /* BuyTicketViewController.swift in Sources */,
 				D1EB6AC2232DB1D900CAE5AB /* PurchaseHistoricViewController.swift in Sources */,
 				D1EB6ABC232DB08B00CAE5AB /* HowToUseViewController.swift in Sources */,
 				D1BF347222825C99004CA111 /* AppDelegate.swift in Sources */,
