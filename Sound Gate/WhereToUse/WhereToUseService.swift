@@ -33,10 +33,10 @@ class WhereToUseService {
         Alamofire.request(url, method: .post, parameters: ["usuarioCd" : idUser, "eventoCd" : idEvent, "data" : data], encoding: JSONEncoding.default).responseJSON { (response) in
             switch response.result {
             case .success:
-                print("deu bom")
+                LoginService.shared.login(user: LoginService.userApp!.login, password: LoginService.userApp!.senha)
                 onComplete(true)
             case .failure(_):
-                print("deu ruim")
+                LoginService.shared.login(user: LoginService.userApp!.login, password: LoginService.userApp!.senha)
                 onComplete(false)
             }
         }
@@ -62,9 +62,9 @@ class WhereToUseService {
         Alamofire.request(url, method: .post, parameters: ["usuarioLogin" : LoginService.userApp!.login, "usuarioSenha" : LoginService.userApp!.senha, "ingressoCd" : ticketId, "eventoCd": eventId], encoding: JSONEncoding.default).responseJSON { (response) in
             switch response.result {
             case .success:
-                print("deu bom")
+                LoginService.shared.login(user: LoginService.userApp!.login, password: LoginService.userApp!.senha)
             case .failure(_):
-                print("deu ruim")
+                LoginService.shared.login(user: LoginService.userApp!.login, password: LoginService.userApp!.senha)
             }
         }
     }

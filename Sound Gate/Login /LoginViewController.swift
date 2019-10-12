@@ -15,7 +15,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var sigInButton: UIButton!
-    
+    let loading = Loading()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,9 +54,23 @@ class LoginViewController: UIViewController {
     
     @IBAction func LogIn(_ sender: Any) {
         view.endEditing(true)
-        
+        loading.playAnimations(view: self.view)
         if let user = userTextField.text, let password = passwordTextField.text {
-            LoginService.shared.login(user: user, password: password, view: self)
+            LoginService.shared.login(user: user, password: password) { (sucess, erro) in
+                if let deubom = sucess {
+                    print(deubom)
+                    let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                    let newViewController = storyBoard.instantiateViewController(withIdentifier: "Home") as! UITabBarController
+                    newViewController.modalPresentationStyle = .fullScreen
+                    self.present(newViewController, animated: true, completion: nil)
+                } else if let deuRuim = erro {
+                    self.loading.stopAnimation()
+                    print(deuRuim)
+                    let alert = UIAlertController(title: "Logim mal sucedido", message: "Usuário ou senha incorretos", preferredStyle: UIAlertController.Style.alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
         }
     }
     

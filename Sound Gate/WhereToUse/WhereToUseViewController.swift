@@ -21,10 +21,12 @@ class WhereToUseViewController: UIViewController {
         tableViewContent.register(UINib(nibName: "TicketCellTableViewCell", bundle: nil), forCellReuseIdentifier: "TicketCell")
         tableViewContent.register(UINib(nibName: "TicketStoreTableViewCell", bundle: nil), forCellReuseIdentifier: "TicketStoreCell")
         showLoading()
+        self.tabBarController?.tabBar.isHidden = true
         WhereToUseService.shared.loadTickets()
         WhereToUseService.shared.loadEvents { (isLoading) -> Bool in
             self.showLoading()
             self.tableViewContent.reloadData()
+            self.tabBarController?.tabBar.isHidden = false
             return self.isLoading
         }
     }
@@ -38,11 +40,14 @@ class WhereToUseViewController: UIViewController {
         }
     }
     @IBAction func switchTableViewController(_ sender: UISegmentedControl) {
+        isLoading = true
+        self.tabBarController?.tabBar.isHidden = true
         showLoading()
         WhereToUseService.shared.loadTickets()
         WhereToUseService.shared.loadEvents { (isLoading) -> Bool in
             self.showLoading()
             self.tableViewContent.reloadData()
+            self.tabBarController?.tabBar.isHidden = false
             return self.isLoading
         }
     }
@@ -60,9 +65,17 @@ extension WhereToUseViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             WhereToUseService.shared.deleteTicket(ticketId: WhereToUseService.shared.tickets[indexPath.row].cd, eventId: WhereToUseService.shared.tickets[indexPath.row].evento.cd)
-            WhereToUseService.shared.loadEvents { (loading) -> Bool in
-                self.tableViewContent.reloadData()
-                return loading
+            isLoading = true
+            self.tabBarController?.tabBar.isHidden = true
+            showLoading()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                WhereToUseService.shared.loadTickets()
+                WhereToUseService.shared.loadEvents { (isLoading) -> Bool in
+                    self.showLoading()
+                    self.tableViewContent.reloadData()
+                    self.tabBarController?.tabBar.isHidden = false
+                    return self.isLoading
+                }
             }
         }
     }

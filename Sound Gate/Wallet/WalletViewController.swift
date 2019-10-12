@@ -28,10 +28,14 @@ class WalletViewController: UIViewController {
         chirp.receivedBlock = {
             (data: Data?, channel: UInt?) -> () in
             if let _ = data {
-                if self.label.text != "deu bom" {
-                    self.label.text = "deu bom"
+                
+                let identifier = "\(LoginService.userApp!.cd)"
+                print(identifier)
+                let payload: Data = identifier.data(using: .utf8)!
+                if let err = self.chirp.send(payload) {
+                  print("ChirpError (%@)", err.localizedDescription)
                 } else {
-                    self.label.text = "deu bom pra caralho"
+                  print("Sent (identifier)")
                 }
             } else {
                 print("deu ruim")

@@ -62,7 +62,6 @@ class BuyTicketViewController: UIViewController {
                 return result
             }
         }
-        
     }
     
     @IBAction func backButton(_ sender: Any) {

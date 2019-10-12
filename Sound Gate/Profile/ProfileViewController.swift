@@ -37,6 +37,7 @@ class ProfileViewController: UIViewController {
         rgLabel.text = user.rg
         addressTextField.placeholder = user.endereco.logradouro
         phoneTextField.placeholder = "\(user.telefone)"
+        emailTextField.placeholder = user.login
     }
     
     func addDoneButtonOnKeyboard() {

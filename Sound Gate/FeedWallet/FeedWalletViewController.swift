@@ -16,6 +16,7 @@ class FeedWalletViewController: UIViewController {
     @IBOutlet weak var expiringDatePicker: UIDatePicker!
     @IBOutlet weak var cvvTextField: UITextField!
     @IBOutlet weak var finalizeBuyButton: UIButton!
+    let loading = Loading()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,7 +55,15 @@ class FeedWalletViewController: UIViewController {
     }
     
     @IBAction func finalizeBuy(_ sender: Any) {
-        FeedWalletService.shared.updateAvailableMoney(value: Double(valueTextField.text!) as! Double)
+        loading.playAnimations(view: self.view)
+        self.tabBarController?.tabBar.isHidden = true
+        FeedWalletService.shared.updateAvailableMoney(value: Double(valueTextField.text!) as! Double) {_ in
+            let alert = UIAlertController(title: "Compra bem Sucedida", message: "Saldo adicionado ao seu saldo", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+            self.loading.stopAnimation()
+            self.tabBarController?.tabBar.isHidden = false
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
 }
