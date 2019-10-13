@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import TLCustomMask
 
 class FeedWalletViewController: UIViewController {
 
@@ -16,11 +17,18 @@ class FeedWalletViewController: UIViewController {
     @IBOutlet weak var expiringDatePicker: UIDatePicker!
     @IBOutlet weak var cvvTextField: UITextField!
     @IBOutlet weak var finalizeBuyButton: UIButton!
+    let cardMask = TLCustomMask()
+    let cvvMask = TLCustomMask()
     let loading = Loading()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.addDoneButtonOnKeyboard()
+        
+        cardMask.formattingPattern = "$$$$ $$$$ $$$$ $$$$"
+        cvvMask.formattingPattern = "$$$"
+        cardNumberTextField.delegate = self
+        cvvTextField.delegate = self
         finalizeBuyButton.layer.cornerRadius = 8
         valueTextField.autocorrectionType = .no
         cardNumberTextField.autocorrectionType = .no
@@ -55,10 +63,18 @@ class FeedWalletViewController: UIViewController {
     }
     
     @IBAction func finalizeBuy(_ sender: Any) {
-        loading.playAnimations(view: self.view)
-        self.tabBarController?.tabBar.isHidden = true
-        FeedWalletService.shared.updateAvailableMoney(value: Double(valueTextField.text!) as! Double) {_ in
-            let alert = UIAlertController(title: "Compra bem Sucedida", message: "Saldo adicionado ao seu saldo", preferredStyle: UIAlertController.Style.alert)
+        if valueTextField.text != "" && cardNumberTextField.text != "" && nameTextField.text != "" && cvvTextField.text != "" {
+            loading.playAnimations(view: self.view)
+            self.tabBarController?.tabBar.isHidden = true
+            FeedWalletService.shared.updateAvailableMoney(value: Double(valueTextField.text!)!) {_ in
+                let alert = UIAlertController(title: "Compra bem Sucedida", message: "Saldo atualizado", preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                self.loading.stopAnimation()
+                self.tabBarController?.tabBar.isHidden = false
+                self.present(alert, animated: true, completion: nil)
+            }
+        } else {
+            let alert = UIAlertController(title: "Campo(s) obrigatórios não preenchidos", message: "Preencha todos os campos", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
             self.loading.stopAnimation()
             self.tabBarController?.tabBar.isHidden = false
@@ -66,4 +82,21 @@ class FeedWalletViewController: UIViewController {
         }
     }
     
+}
+
+extension FeedWalletViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField,
+                   shouldChangeCharactersIn range: NSRange,
+                   replacementString string: String) -> Bool {
+        
+        if textField == cardNumberTextField {
+            textField.text = cardMask.formatStringWithRange(range: range, string: string)
+        }
+        
+        if textField == cvvTextField {
+            textField.text = cvvMask.formatStringWithRange(range: range, string: string)
+        }
+        
+        return false
+    }
 }

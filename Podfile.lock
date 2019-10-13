@@ -2,23 +2,27 @@ PODS:
   - Alamofire (4.8.1)
   - ChirpSDK (3.4.3)
   - lottie-ios (2.5.2)
+  - TLCustomMask (2.0.0)
 
 DEPENDENCIES:
   - Alamofire
   - ChirpSDK
   - lottie-ios
+  - TLCustomMask
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - ChirpSDK
     - lottie-ios
+    - TLCustomMask
 
 SPEC CHECKSUMS:
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
   ChirpSDK: 6f7ca641463e090ec3df8a0c7189b7ce412cb739
   lottie-ios: 3fef45d3fabe63e3c7c2eb603dd64ddfffc73062
+  TLCustomMask: 32bcd873851167c2d2a3726b048766b737873710
 
-PODFILE CHECKSUM: 939e544fb64b7f357737610f0e0c220329b22651
+PODFILE CHECKSUM: d1c9154c2a11d0d92c8c6018a2785a4852512083
 
 COCOAPODS: 1.6.0

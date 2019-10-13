@@ -7,147 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A7E6EBD4-8E26-4382-99B0-22C38803C2BB"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Sound Gate/WhereToUse/WhereToUseViewController.swift"
-            timestampString = "592489899.211607"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "tableView(_:canEditRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D36C6368-6404-4FFB-84B1-E16DBF42E6CA"
+            uuid = "ABAB334A-F92A-4993-A869-02DB99E1D5DF"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Sound Gate/WhereToUse/WhereToUseService.swift"
-            timestampString = "592489899.212449"
+            filePath = "Sound Gate/FeedWallet/FeedWalletViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
-            landmarkName = "deleteTicket(ticketId:eventId:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "193D1F32-5C7C-4085-9C2E-6FD8B13A4C99"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Sound Gate/WhereToUse/WhereToUseService.swift"
-            timestampString = "592489899.212613"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
-            landmarkName = "deleteTicket(ticketId:eventId:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "193D1F32-5C7C-4085-9C2E-6FD8B13A4C99 - 4209a64e5f887f4a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Sound_Gate.WhereToUseService.deleteTicket(ticketId: Swift.Int, eventId: Swift.Int) -&gt; ()"
-                  moduleName = "Sound Gate"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/matheusmartins/Desktop/Sound%20Gate%202/Sound%20Gate/WhereToUse/WhereToUseService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "62"
-                  endingLineNumber = "62"
-                  offsetFromSymbolStart = "432">
-               </Location>
-               <Location
-                  uuid = "193D1F32-5C7C-4085-9C2E-6FD8B13A4C99 - 4d6a17dd15ccdfff"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in Sound_Gate.WhereToUseService.deleteTicket(ticketId: Swift.Int, eventId: Swift.Int) -&gt; ()"
-                  moduleName = "Sound Gate"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/matheusmartins/Desktop/Sound%20Gate%202/Sound%20Gate/WhereToUse/WhereToUseService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "63"
-                  endingLineNumber = "63"
-                  offsetFromSymbolStart = "75">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "05F56495-C7B9-46D5-A566-BA75995C18C8"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Sound Gate/FeedWallet/FeedWalletService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
-            landmarkName = "updateAvailableMoney(value:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E846417C-ACEF-4760-91B7-50432B5A3D52"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Sound Gate/WhereToUse/WhereToUseService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "addTicket(idEvent:idUser:data:onComplete:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "DBD6853A-D220-4491-8CF5-7A1E90D38BB3"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Sound Gate/WhereToUse/WhereToUseService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "addTicket(idEvent:idUser:data:onComplete:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "F85E1790-F60E-4203-940C-61B2C8D12F5B"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Sound Gate/Wallet/WalletViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "finalizeBuy(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

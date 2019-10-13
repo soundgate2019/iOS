@@ -66,7 +66,7 @@ class LoginViewController: UIViewController {
                 } else if let deuRuim = erro {
                     self.loading.stopAnimation()
                     print(deuRuim)
-                    let alert = UIAlertController(title: "Logim mal sucedido", message: "Usuário ou senha incorretos", preferredStyle: UIAlertController.Style.alert)
+                    let alert = UIAlertController(title: "Login mal sucedido", message: "Usuário ou senha incorretos!", preferredStyle: UIAlertController.Style.alert)
                     alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
                     self.present(alert, animated: true, completion: nil)
                 }

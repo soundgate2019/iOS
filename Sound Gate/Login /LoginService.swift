@@ -14,32 +14,18 @@ class LoginService {
     static var userApp: User?
     let loading = Loading()
     func login(user: String, password: String, onCompletion: @escaping (User?, Error?) -> Void) {
-//        loading.playAnimations(view: view.view)
         let link = "https://soundgate.herokuapp.com/SoundGateWB/Usuario/logar"
         guard let url = URL(string: link) else { return }
         Alamofire.request(url, method: .post, parameters: ["login" : user, "senha" : password], encoding: JSONEncoding.default).responseJSON { (response) in
             switch response.result {
             case .success:
-                let teste = try! JSONDecoder().decode(User.self, from: response.data!)
-                LoginService.userApp = teste
+                let user = try! JSONDecoder().decode(User.self, from: response.data!)
+                LoginService.userApp = user
                 onCompletion(LoginService.userApp, nil)
-                    
-//                }
             
             case .failure:
                 print("Deu ruim")
                 onCompletion(nil, response.error)
-//                    self.loading.stopAnimation()
-//                    let login = view as! LoginViewController
-//                    login.userTextField.layer.cornerRadius = login.userTextField.frame.height / 2
-//                    login.userTextField.layer.borderWidth = 2
-//                    login.userTextField.layer.borderColor = UIColor.red.cgColor
-//                    login.userTextField.text = ""
-//                    login.userTextField.placeholder = "Usuario ou senha incorretos"
-//                    login.passwordTextField.layer.borderWidth = 2
-//                    login.passwordTextField.layer.borderColor = UIColor.red.cgColor
-//                    login.passwordTextField.text = ""
-//                }
             }
         }
     }
@@ -49,8 +35,8 @@ class LoginService {
         Alamofire.request(url, method: .post, parameters: ["login" : user, "senha" : password], encoding: JSONEncoding.default).responseJSON { (response) in
             switch response.result {
                 case .success:
-                    let teste = try! JSONDecoder().decode(User.self, from: response.data!)
-                    LoginService.userApp = teste
+                    let user = try! JSONDecoder().decode(User.self, from: response.data!)
+                    LoginService.userApp = user
                     
                 case .failure(_):
                     self.loading.stopAnimation()
@@ -86,3 +72,4 @@ class LoginService {
     
 
 }
+

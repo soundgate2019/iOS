@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import TLCustomMask
 
 class ProfileViewController: UIViewController {
 
@@ -18,6 +19,9 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var addressTextField: UITextField!
     @IBOutlet weak var phoneTextField: UITextField!
     @IBOutlet weak var refreshButton: UIButton!
+    var phoneValue: String?
+    let phoneMask = TLCustomMask()
+    let loading = Loading()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,17 +31,27 @@ class ProfileViewController: UIViewController {
         emailTextField.autocorrectionType = .no
         addressTextField.autocorrectionType = .no
         phoneTextField.autocorrectionType = .no
+        phoneTextField.delegate = self
+        phoneMask.formattingPattern = "$$$$$-$$$$"
     }
     
     func setupInfos(user: User) {
         nameLabel.text = user.nome
         let date = user.nascimento.split(separator: "T")
-        birthDayLabel.text = "\(date[0])"
-        cpfLabel.text = "\(user.cpf)"
-        rgLabel.text = user.rg
-        addressTextField.placeholder = user.endereco.logradouro
-        phoneTextField.placeholder = "\(user.telefone)"
-        emailTextField.placeholder = user.login
+        birthDayLabel.text = "Nascimento: \(date[0])"
+        var cpf = "\(user.cpf)"
+        cpf.insert(".", at: cpf.index(cpf.startIndex, offsetBy: 3))
+        cpf.insert(".", at: cpf.index(cpf.startIndex, offsetBy: 7))
+        cpf.insert("-", at: cpf.index(cpf.startIndex, offsetBy: 11))
+        cpfLabel.text = "CPF: \(cpf)"
+        var rg = "\(user.rg)"
+        rg.insert(".", at: cpf.index(rg.startIndex, offsetBy: 2))
+        rg.insert(".", at: cpf.index(rg.startIndex, offsetBy: 6))
+        rg.insert("-", at: cpf.index(rg.startIndex, offsetBy: 10))
+        rgLabel.text = "RG: \(rg)"
+        addressTextField.placeholder = "Endereço: \(user.endereco.logradouro)"
+        phoneTextField.placeholder = "Telefone: \(user.telefone)"
+        emailTextField.placeholder = "E-Mail: \(user.login)"
     }
     
     func addDoneButtonOnKeyboard() {
@@ -65,7 +79,48 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func refreshInfos(_ sender: Any) {
+        if emailTextField.text != "" && phoneValue != "" && addressTextField.text != "" {
+            loading.playAnimations(view: self.view)
+            self.tabBarController?.tabBar.isHidden = true
+            ProfileService.shared.refreshInfos(email: emailTextField!.text!, phone: Int(phoneValue!)!, address: addressTextField.text!) { (sucess, erro) in
+                if sucess == 200 {
+                    self.loading.stopAnimation()
+                    self.tabBarController?.tabBar.isHidden = false
+                    let alert = UIAlertController(title: "Informações atualizadas", message: "Todas as informações estão atualizadas agora", preferredStyle: UIAlertController.Style.alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                    self.emailTextField.text = ""
+                    self.phoneTextField.text = ""
+                    self.addressTextField.text = ""
+                    self.setupInfos(user: LoginService.userApp!)
+                }
+                
+                if erro != nil {
+                    self.loading.stopAnimation()
+                    self.tabBarController?.tabBar.isHidden = false
+                    let alert = UIAlertController(title: "Ops =(", message: "Algo deu errado, tente mais tarde!", preferredStyle: UIAlertController.Style.alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
+        } else {
+            let alert = UIAlertController(title: "Ops =(", message: "É necessário preencher todos os campos", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+}
+
+extension ProfileViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField,
+    shouldChangeCharactersIn range: NSRange,
+    replacementString string: String) -> Bool {
+        if textField == phoneTextField {
+            textField.text = phoneMask.formatStringWithRange(range: range, string: string)
+            phoneValue = phoneMask.cleanText
+        }
         
+        return false
     }
     
 }

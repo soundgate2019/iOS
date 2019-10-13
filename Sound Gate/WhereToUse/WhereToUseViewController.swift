@@ -22,12 +22,11 @@ class WhereToUseViewController: UIViewController {
         tableViewContent.register(UINib(nibName: "TicketStoreTableViewCell", bundle: nil), forCellReuseIdentifier: "TicketStoreCell")
         showLoading()
         self.tabBarController?.tabBar.isHidden = true
-        WhereToUseService.shared.loadTickets()
-        WhereToUseService.shared.loadEvents { (isLoading) -> Bool in
+        WhereToUseService.shared.loadTickets { _ in }
+        WhereToUseService.shared.loadEvents { _ in
             self.showLoading()
             self.tableViewContent.reloadData()
             self.tabBarController?.tabBar.isHidden = false
-            return self.isLoading
         }
     }
     
@@ -40,16 +39,26 @@ class WhereToUseViewController: UIViewController {
         }
     }
     @IBAction func switchTableViewController(_ sender: UISegmentedControl) {
-        isLoading = true
-        self.tabBarController?.tabBar.isHidden = true
-        showLoading()
-        WhereToUseService.shared.loadTickets()
-        WhereToUseService.shared.loadEvents { (isLoading) -> Bool in
-            self.showLoading()
-            self.tableViewContent.reloadData()
-            self.tabBarController?.tabBar.isHidden = false
-            return self.isLoading
+        if segmentedControl.selectedSegmentIndex == 0 {
+            isLoading = true
+            self.tabBarController?.tabBar.isHidden = true
+            showLoading()
+            WhereToUseService.shared.loadEvents { _ in
+                self.showLoading()
+                self.tableViewContent.reloadData()
+                self.tabBarController?.tabBar.isHidden = false
+            }
+        } else {
+            isLoading = true
+            self.tabBarController?.tabBar.isHidden = true
+            showLoading()
+             WhereToUseService.shared.loadTickets { _ in
+                self.showLoading()
+                self.tableViewContent.reloadData()
+                self.tabBarController?.tabBar.isHidden = false
+            }
         }
+        
     }
 }
 
@@ -68,13 +77,14 @@ extension WhereToUseViewController: UITableViewDelegate {
             isLoading = true
             self.tabBarController?.tabBar.isHidden = true
             showLoading()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                WhereToUseService.shared.loadTickets()
-                WhereToUseService.shared.loadEvents { (isLoading) -> Bool in
-                    self.showLoading()
-                    self.tableViewContent.reloadData()
-                    self.tabBarController?.tabBar.isHidden = false
-                    return self.isLoading
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                WhereToUseService.shared.loadTickets {_ in
+                self.showLoading()
+                self.tableViewContent.reloadData()
+                self.tabBarController?.tabBar.isHidden = false
+                let alert = UIAlertController(title: "Estorno bem sucedido", message: "Dinheiro já retornou para sua carteiira!", preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
                 }
             }
         }
@@ -133,9 +143,13 @@ extension WhereToUseViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let sb: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: "BuyTicketViewController") as! BuyTicketViewController
-        vc.event = WhereToUseService.shared.events[indexPath.row]
-        self.present(vc, animated: true, completion: nil)
+        if segmentedControl.selectedSegmentIndex == 1 {
+            return
+        } else {
+            let sb: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = sb.instantiateViewController(withIdentifier: "BuyTicketViewController") as! BuyTicketViewController
+            vc.event = WhereToUseService.shared.events[indexPath.row]
+            self.present(vc, animated: true, completion: nil)
+        }
     }
 }

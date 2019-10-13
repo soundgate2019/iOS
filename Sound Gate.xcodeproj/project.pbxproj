@@ -14,6 +14,7 @@
 		D11F43E2234A9CD800DAA713 /* TicketStoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D11F43E1234A9CD800DAA713 /* TicketStoreTableViewCell.xib */; };
 		D11F43E4234A9FB700DAA713 /* TicketStoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11F43E3234A9FB700DAA713 /* TicketStoreTableViewCell.swift */; };
 		D11F43E6234AA61300DAA713 /* how_to_use.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = D11F43E5234AA61200DAA713 /* how_to_use.mp4 */; };
+		D17C1F1A2352B445003E9531 /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17C1F192352B445003E9531 /* ProfileService.swift */; };
 		D1B558072313086E00593EED /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B558062313086E00593EED /* SignInViewController.swift */; };
 		D1BF347222825C99004CA111 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BF347122825C99004CA111 /* AppDelegate.swift */; };
 		D1BF347422825C99004CA111 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BF347322825C99004CA111 /* LoginViewController.swift */; };
@@ -49,6 +50,7 @@
 		D11F43E1234A9CD800DAA713 /* TicketStoreTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TicketStoreTableViewCell.xib; sourceTree = "<group>"; };
 		D11F43E3234A9FB700DAA713 /* TicketStoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketStoreTableViewCell.swift; sourceTree = "<group>"; };
 		D11F43E5234AA61200DAA713 /* how_to_use.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = how_to_use.mp4; sourceTree = "<group>"; };
+		D17C1F192352B445003E9531 /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
 		D1B558062313086E00593EED /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SignInViewController.swift; path = "Sound Gate/Reusable Cells/SignInViewController.swift"; sourceTree = SOURCE_ROOT; };
 		D1BF346E22825C99004CA111 /* Sound Gate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sound Gate.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1BF347122825C99004CA111 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				D1EB6AB8232DAE7700CAE5AB /* ProfileViewController.swift */,
+				D17C1F192352B445003E9531 /* ProfileService.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Sound Gate/Pods-Sound Gate-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/TLCustomMask/TLCustomMask.framework",
 				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -350,6 +354,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TLCustomMask.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -394,6 +399,7 @@
 				D1E8238A234E0F9F00578E60 /* WhereToUseService.swift in Sources */,
 				D11F43E4234A9FB700DAA713 /* TicketStoreTableViewCell.swift in Sources */,
 				D1E8238C234E22E400578E60 /* BuyTicketViewController.swift in Sources */,
+				D17C1F1A2352B445003E9531 /* ProfileService.swift in Sources */,
 				D1EB6AC2232DB1D900CAE5AB /* PurchaseHistoricViewController.swift in Sources */,
 				D1EB6ABC232DB08B00CAE5AB /* HowToUseViewController.swift in Sources */,
 				D1BF347222825C99004CA111 /* AppDelegate.swift in Sources */,

@@ -14,42 +14,41 @@ class WhereToUseService {
     static let shared = WhereToUseService()
     let imageCache = NSCache<AnyObject, AnyObject>()
     
-    func loadEvents(onComplete: @escaping (_ isLoading: Bool) -> Bool) {
+    func loadEvents(onComplete: @escaping ([Ingresso]?) -> Void) {
         let link = "https://soundgate.herokuapp.com/SoundGateWB/Evento/eventos"//
         guard let url = URL(string: link) else { return }
         Alamofire.request(url).responseJSON { response in
             if let data = response.data {
-                let teste = try! JSONDecoder().decode([Evento].self, from: data)
-                self.events = teste
-                onComplete(true)
+                let events = try! JSONDecoder().decode([Evento].self, from: data)
+                self.events = events
+                onComplete(WhereToUseService.shared.tickets)
             } else {
-                print("deu ruim")
+                
             }
         }
     }
-    func addTicket(idEvent: Int, idUser: Int, data: String, onComplete: @escaping (_ isLoading: Bool) -> Bool) {
+    func addTicket(idEvent: Int, idUser: Int, data: String, onComplete: @escaping (Int?, Error?) -> Void) {
         let link = "https://soundgate.herokuapp.com/SoundGateWB/Usuario/adicionarIngresso"
         guard let url = URL(string: link) else { return }
-        Alamofire.request(url, method: .post, parameters: ["usuarioCd" : idUser, "eventoCd" : idEvent, "data" : data], encoding: JSONEncoding.default).responseJSON { (response) in
-            switch response.result {
-            case .success:
+        Alamofire.request(url, method: .post, parameters: ["usuarioCd" : idUser, "eventoCd" : idEvent, "data" : data], encoding: JSONEncoding.default).response { (response) in
+            if let _ = response.data {
                 LoginService.shared.login(user: LoginService.userApp!.login, password: LoginService.userApp!.senha)
-                onComplete(true)
-            case .failure(_):
+                onComplete(response.response?.statusCode, nil)
+            } else if let _ = response.error {
                 LoginService.shared.login(user: LoginService.userApp!.login, password: LoginService.userApp!.senha)
-                onComplete(false)
+                onComplete(nil, response.error)
             }
         }
     }
     
-    func loadTickets() {
+    func loadTickets(onComplete: @escaping ([Ingresso]?) -> Void) {
         let link = "https://soundgate.herokuapp.com/SoundGateWB/Usuario/ingressos"
         guard let url = URL(string: link) else { return }
         Alamofire.request(url, method: .post, parameters: ["cd" : LoginService.userApp!.cd, "login" : LoginService.userApp!.login, "senha" : LoginService.userApp!.senha, "nome" : LoginService.userApp!.nome, "cpf" : LoginService.userApp!.cpf, "rg" : LoginService.userApp!.rg, "nascimento" : LoginService.userApp!.nascimento, "telefone" : LoginService.userApp!.telefone, "saldo" : LoginService.userApp!.saldo, "endereco" : ["cep" : LoginService.userApp!.endereco.cep, "logradouro" : LoginService.userApp!.endereco.logradouro, "descricao" : LoginService.userApp!.endereco.descricao]], encoding: JSONEncoding.default).responseJSON { response in
             if let data = response.data {
-                let teste = try! JSONDecoder().decode([Ingresso].self, from: data)
-                self.tickets = teste
-//                onComplete(true)
+                let tickets = try! JSONDecoder().decode([Ingresso].self, from: data)
+                self.tickets = tickets
+                onComplete(WhereToUseService.shared.tickets)
             } else {
                 print("deu ruim")
             }
