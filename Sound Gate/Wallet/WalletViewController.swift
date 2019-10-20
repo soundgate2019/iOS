@@ -16,13 +16,14 @@ class WalletViewController: UIViewController {
     @IBOutlet weak var availableMoney: UILabel!
     @IBOutlet weak var blockMoney: UIButton!
     @IBOutlet weak var history: UIButton!
-    
+    var previousValue: Double?
     let loading = Loading()
     
     let chirp: ChirpConnect = ChirpConnect(appKey: "C6ff42A6Da1bb6fDC4f0e040f", andSecret: "D365e8F800a28dEccC24aFc77EEA6f1CdbADAb9D18EaaCcb80")!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        previousValue = LoginService.userApp!.saldo
         blockMoney.layer.cornerRadius = 8
         history.layer.cornerRadius = 8
         chirp.receivedBlock = {
@@ -32,6 +33,24 @@ class WalletViewController: UIViewController {
                 let identifier = "\(LoginService.userApp!.cd)"
                 print(identifier)
                 let payload: Data = identifier.data(using: .utf8)!
+                self.tabBarController?.tabBar.isHidden = true
+                DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                    self.loading.playAnimations(view: self.self.view)
+                    self.tabBarController?.tabBar.isHidden = false
+                    LoginService.shared.login(user: LoginService.userApp!.login, password: LoginService.userApp!.senha) { User, _ in
+                        self.availableMoney.text = "R$ " + String(format: "%.2f", User!.saldo)
+                        self.loading.stopAnimation()
+                        if self.previousValue != User?.saldo {
+                            let alert = UIAlertController(title: "Passagem liberada", message: "Valor descontado com sucesso!", preferredStyle: UIAlertController.Style.alert)
+                            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                            self.present(alert, animated: true, completion: nil)
+                        } else {
+                            let alert = UIAlertController(title: "Passagem Não liberada", message: "Saldo insuficiente!", preferredStyle: UIAlertController.Style.alert)
+                            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                            self.present(alert, animated: true, completion: nil)
+                        }
+                    }
+                }
                 if let err = self.chirp.send(payload) {
                   print("ChirpError (%@)", err.localizedDescription)
                 } else {
@@ -49,7 +68,6 @@ class WalletViewController: UIViewController {
         case AVAudioSessionRecordPermission.undetermined:
             print("Libera o microfone ae")
             AVAudioSession.sharedInstance().requestRecordPermission({ (granted) in
-                // Handle granted
             })
         default:
             print("deu Ruim")
@@ -72,6 +90,10 @@ class WalletViewController: UIViewController {
         setupInfos(user: LoginService.userApp!)
         self.navigationController?.isNavigationBarHidden = true
         self.tabBarController?.tabBar.isHidden = false
+    }
+    
+    func refreshValue() {
+        previousValue = LoginService.userApp!.saldo
     }
     
     func setupInfos(user: User) {

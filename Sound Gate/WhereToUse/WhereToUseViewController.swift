@@ -82,7 +82,7 @@ extension WhereToUseViewController: UITableViewDelegate {
                 self.showLoading()
                 self.tableViewContent.reloadData()
                 self.tabBarController?.tabBar.isHidden = false
-                let alert = UIAlertController(title: "Estorno bem sucedido", message: "Dinheiro já retornou para sua carteiira!", preferredStyle: UIAlertController.Style.alert)
+                let alert = UIAlertController(title: "Estorno bem sucedido", message: "Dinheiro já retornou para sua carteira!", preferredStyle: UIAlertController.Style.alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
                 }

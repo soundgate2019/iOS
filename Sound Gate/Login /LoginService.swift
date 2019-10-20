@@ -22,7 +22,6 @@ class LoginService {
                 let user = try! JSONDecoder().decode(User.self, from: response.data!)
                 LoginService.userApp = user
                 onCompletion(LoginService.userApp, nil)
-            
             case .failure:
                 print("Deu ruim")
                 onCompletion(nil, response.error)
