@@ -50,7 +50,7 @@ class WhereToUseService {
                 self.tickets = tickets
                 onComplete(WhereToUseService.shared.tickets)
             } else {
-                print("deu ruim")
+                print("erro ao parsear json")
             }
         }
     }

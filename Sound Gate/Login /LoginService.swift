@@ -23,7 +23,7 @@ class LoginService {
                 LoginService.userApp = user
                 onCompletion(LoginService.userApp, nil)
             case .failure:
-                print("Deu ruim")
+                print("Erro ao parsear o json")
                 onCompletion(nil, response.error)
             }
         }

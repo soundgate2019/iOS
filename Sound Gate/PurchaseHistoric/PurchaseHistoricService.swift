@@ -20,7 +20,7 @@ class PurchaseHistoricService {
                 let historic = try! JSONDecoder().decode([PurchaseHistoricModel].self, from: response.data!)
                 PurchaseHistoricService.historic = historic
             case .failure:
-                print("deu ruim")
+                print("erro ao parsear json")
             }
         }
     }
